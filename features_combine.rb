@@ -1,54 +1,98 @@
-android_file = "android_features.md"
-js_file = "js_features.md"
+features_file = "properties.md"
+
+trackers = ["android", "ios", "js", "node", "java"]
+
+android_file = "features/android_features.md"
+ios_file = "features/ios_features.md"
+js_file = "features/js_features.md"
+node_file = "features/node_features.md"
+java_file = "features/java_features.md"
+
 
 android = File.read(android_file).split("\n")
 js = File.read(js_file).split("\n")
 
-possible_values = {
-  "" => "",
-  "y" => "yes",
-  "n" => "no",
-  "dep" => "deprecated",
-  "yb" => "yes, but...",
-  "na" => "N/A"
-}
+# possible_values = {
+#   "" => "",
+#   "y" => "yes",
+#   "n" => "no",
+#   "dep" => "deprecated",
+#   "yb" => "yes, but...",
+#   "na" => "N/A"
+# }
 
-properties = []
-android_list = []
-js_list = []
 
-android.each do |line|
-  pieces = line.split("|")
-  next if pieces[0].include?("#")
+all_features = File.read(features_file).split("\n")
+tracker_hash = Hash.new { |hash, key| hash[key] = [] }
 
-  if !properties.include?(pieces[0])
-    properties << pieces[0].strip
+trackers.each do |tracker|
+  file = File.read("features/#{tracker}_features.md").split("\n")
+
+  file.each do |line|
+    line_sections = line.split("|")
+    next if line_sections[0].include?("#")
+
+    tracker_hash[tracker] << line_sections[1].strip
   end
-  android_list << possible_values[pieces[1].strip]
+
 end
 
-js.each do |line|
-  pieces = line.split("|")
-  next if pieces[0].include?("#")
-
-  js_list << possible_values[pieces[1].strip]
+tracker_hash.each do |k, v|
+  v.unshift(k)
 end
 
-heading = ["Feature", "Android", "JS"]
-table = [properties, android_list, js_list].transpose
-table.unshift(heading)
-
-table.each do |line|
-  line.insert(0, "|")
-  line.insert(2, "|")
-  line.insert(4, "|")
-  line.insert(6, "|")
-  line.insert(7, "\n")
+all_the_lists = [all_features]
+trackers.each do |tracker|
+  all_the_lists << tracker_hash[tracker]
 end
 
-divider = "|---|---|---|\n"
-table.insert(1, divider)
-p table
+table = all_the_lists.transpose
 
-output = table.flatten.join
-File.open("test.md", "w") { |f| f.write(output) }
+# to produce html table
+html_table = []
+
+table.each_with_index do |line, i|
+  if i == 0
+    line_with_html = []
+    line.each do |e|
+      line_with_html << "<th>#{e}</th>"
+    end
+    html_table << "<table><thead><tr>#{line_with_html.join}</tr></thead><tbody>"
+  else
+    line_with_html = []
+    line.each do |e|
+      line_with_html << "<td>#{e}</td>"
+    end
+    html_table << "<tr>#{line_with_html.join}</tr>"
+  end
+end
+
+html_table_string = html_table.flatten.join + "</tbody></table>"
+
+output = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" />" \
+          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
+    "<title>Snowplow Tracker Estate</title></head><body>#{html_table_string}</body></html>"
+File.open("test.html", "w") { |f| f.write(output) }
+
+
+# to produce markdown table
+
+# new_table = []
+# table.each do |line|
+#   str = "|" + line.join("|") + "|"
+#   str += "\n"
+#   new_table << str
+# end
+
+# divider = ""
+# trackers.length.times do
+#   divider += "|---"
+# end
+# divider += "|---|\n"
+
+# new_table.insert(1, divider)
+
+# output = new_table.flatten.join
+# File.open("test.md", "w") { |f| f.write(output) }
+
+
