@@ -1,0 +1,32 @@
+h2 {
+  color: rgb(62, 4, 96);
+  margin-left: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  padding: 3px;
+}
+
+th {
+  color: rgb(62, 4, 96);
+}
+
+td.yes {
+  background-color: rgb(159, 247, 200);
+}
+
+td.no {
+  background-color: rgb(247, 159, 159);
+}
+
+td.option {
+  width: 50px;
+}
+
+td.description {
+  width: 500px;
+  padding-left: 5px;
+}

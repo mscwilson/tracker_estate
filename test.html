@@ -1,1 +1,253 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Snowplow Tracker Estate</title></head><body><table><thead><tr><th>FEATURES</th><th>android</th><th>ios</th><th>js</th><th>node</th><th>java</th></tr></thead><tbody><tr><td>Snowplow API (tracker internals hidden inside Snowplow class)</td><td>yes</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr><tr><td>Remote configuration</td><td>yes</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr><tr><td>Multiple tracker instances</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Track an event on multiple trackers at once</td><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>Event_id and timestamp not overridable</td><td>yes</td><td>yes</td><td></td><td></td><td>yes</td></tr><tr><td>True_timestamp available</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Sent_timestamp available</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Track returns event_id</td><td>yes</td><td>yes</td><td>no</td><td>no</td><td>yes</td></tr><tr><td>Automatically track general atomic fields</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Tracker pausable</td><td>yes</td><td>yes</td><td></td><td></td><td>no</td></tr><tr><td>Emitter pausable</td><td>yes</td><td>yes</td><td></td><td></td><td>no</td></tr><tr><td>Flush events command</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Flush at regular time intervals</td><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td></tr><tr><td>Start new session command</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>n/a</td></tr><tr><td>Event index counter for session</td><td>yes</td><td>yes</td><td>yes</td><td>no</td><td>n/a</td></tr><tr><td>Timestamp on session</td><td>yes</td><td>yes</td><td>yes</td><td>no</td><td>n/a</td></tr><tr><td>Asynchronous event sending</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Retry with exponential back-off</td><td>yes</td><td>yes</td><td>no</td><td>yes</td><td>yes</td></tr><tr><td>Plug-in architecture</td><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>Events are different classes</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Events are different functions</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Session pausable</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snowplow Tracker Estate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Snowplow Tracker Estate Overview</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>FEATURES</th>
+          <th>android</th>
+          <th>ios</th>
+          <th>js</th>
+          <th>node</th>
+          <th>java</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="description">
+            Snowplow API (tracker internals hidden inside Snowplow class)
+          </td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Remote configuration</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Multiple tracker instances</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">
+            Track an event on multiple trackers at once
+          </td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Event_id and timestamp not overridable</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">True_timestamp available</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Sent_timestamp available</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Track returns event_id</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Automatically track general atomic fields</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Tracker pausable</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Emitter pausable</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Flush events command</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Flush at regular time intervals</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Start new session command</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="n/a option">n/a</td>
+        </tr>
+        <tr>
+          <td class="description">Event index counter for session</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="n/a option">n/a</td>
+        </tr>
+        <tr>
+          <td class="description">Timestamp on session</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="n/a option">n/a</td>
+        </tr>
+        <tr>
+          <td class="description">Asynchronous event sending</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Retry with exponential back-off</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+        </tr>
+        <tr>
+          <td class="description">Plug-in architecture</td>
+          <td class="no option">no</td>
+          <td class="no option">no</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+        </tr>
+        <tr>
+          <td class="description">Events are different classes</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+        </tr>
+        <tr>
+          <td class="description">Events are different functions</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+        </tr>
+        <tr>
+          <td class="description">Session pausable</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th>SESSION</th>
+          <th>android</th>
+          <th>ios</th>
+          <th>js</th>
+          <th>node</th>
+          <th>java</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="description">Start new session command</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="n/a option">n/a</td>
+        </tr>
+        <tr>
+          <td class="description">Event index counter for session</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="n/a option">n/a</td>
+        </tr>
+        <tr>
+          <td class="description">Timestamp on session</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="yes option">yes</td>
+          <td class="no option">no</td>
+          <td class="n/a option">n/a</td>
+        </tr>
+        <tr>
+          <td class="description">Session pausable</td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+          <td class="option"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

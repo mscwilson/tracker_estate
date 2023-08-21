@@ -1,4 +1,6 @@
+
 features_file = "tracker_properties/features.md"
+sessions_file = "tracker_properties/session.md"
 
 trackers = ["android", "ios", "js", "node", "java"]
 
@@ -12,8 +14,10 @@ trackers = ["android", "ios", "js", "node", "java"]
 # }
 
 
-all_features = File.read(features_file).split("\n")
+session_features = File.read(sessions_file).split("\n")
 tracker_hash = Hash.new { |hash, key| hash[key] = [] }
+
+p session_features
 
 trackers.each do |tracker|
   file = File.read("features/#{tracker}_features.md").split("\n")
@@ -21,6 +25,7 @@ trackers.each do |tracker|
   file.each do |line|
     line_sections = line.split("|")
     next if line_sections[0].include?("#")
+    next if !session_features.include?(line_sections[0].gsub("\t", ""))
 
     tracker_hash[tracker] << line_sections[1].strip
   end
@@ -31,7 +36,7 @@ tracker_hash.each do |k, v|
   v.unshift(k)
 end
 
-all_the_lists = [all_features]
+all_the_lists = [session_features]
 trackers.each do |tracker|
   all_the_lists << tracker_hash[tracker]
 end
@@ -65,24 +70,24 @@ output = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" />" \
 File.open("test.html", "w") { |f| f.write(output) }
 
 
-# to produce markdown table
+# # to produce markdown table
 
-# new_table = []
-# table.each do |line|
-#   str = "|" + line.join("|") + "|"
-#   str += "\n"
-#   new_table << str
-# end
+# # new_table = []
+# # table.each do |line|
+# #   str = "|" + line.join("|") + "|"
+# #   str += "\n"
+# #   new_table << str
+# # end
 
-# divider = ""
-# trackers.length.times do
-#   divider += "|---"
-# end
-# divider += "|---|\n"
+# # divider = ""
+# # trackers.length.times do
+# #   divider += "|---"
+# # end
+# # divider += "|---|\n"
 
-# new_table.insert(1, divider)
+# # new_table.insert(1, divider)
 
-# output = new_table.flatten.join
-# File.open("test.md", "w") { |f| f.write(output) }
+# # output = new_table.flatten.join
+# # File.open("test.md", "w") { |f| f.write(output) }
 
 
