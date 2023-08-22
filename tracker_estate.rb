@@ -21,7 +21,8 @@ class TrackerEstate
       "lua",
       "scala",
       "rust",
-      "web_view"
+      "web_view",
+      "pixel"
     ]
 
     @tracker_names = {
@@ -144,7 +145,7 @@ class TrackerEstate
         "#{make_a_single_table(@subject_config_file)}<br/>" \
         "#{make_a_single_table(@tracker_config_file)}<br/>" \
         "#{make_a_single_table(@callbacks_file)}<br/>" \
-        "</body></html>"
+        "</body></html>\n"
         
     File.open("snowplow_tracker_estate.html", "w") { |f| f.write(output) }
   end
@@ -152,21 +153,21 @@ class TrackerEstate
   def add_new_property_to_trackers(insert_after_this_text, new_text)
     @trackers.each do |tracker|
       file = File.read("tracker_details/#{tracker}.md").split("\n")
-
+      
       file.each_with_index do |line, i|
-        if line == insert_after_this_text
+        if line.include? insert_after_this_text
           file.insert(i+1, new_text)
           break
         end
       end
 
-      File.open("tracker_details/#{tracker}.md", "w") { |f| f.write(test_file.join("\n")) }
+      File.open("tracker_details/#{tracker}.md", "w") { |f| f.write(file.join("\n")) }
     end
   end
 
 end
 
 estate = TrackerEstate.new
-# estate.output_html_file
-estate.add_new_property_to_trackers("Session pausable | ", "Media tracking | ")
-estate.add_new_property_to_trackers("Media tracking | ", "Ecommerce tracking | ")
+estate.output_html_file
+
+# estate.add_new_property_to_trackers("Media tracking", "Ecommerce tracking | ")

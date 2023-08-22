@@ -95,3 +95,5 @@ Plug-in architecture | yes
 Events are different classes | 
 Events are different functions | 
 Session pausable | 
+Media tracking | 
+Ecommerce tracking | 

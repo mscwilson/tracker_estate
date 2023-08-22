@@ -3,7 +3,6 @@ API docs | yes
 Good docs (clear page titles, easy to use) | no
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
 
 # TESTS AND CI
 Automated unit tests | yes
@@ -48,6 +47,7 @@ Autotracking geolocation entity |
 Autotracking deeplink entity | 
 Choose which platform entity properties to track | 
 
+
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
 onSessionUpdate callback | 
@@ -72,6 +72,7 @@ Set domain sessionIndex |
 Sending failure callback | 
 Drop events callback | 
 
+
 # FEATURES
 Snowplow API (tracker internals hidden inside Snowplow class) | no
 Remote configuration | no
@@ -95,3 +96,5 @@ Plug-in architecture | yes
 Events are different classes | 
 Events are different functions | 
 Session pausable | 
+Media tracking | 
+Ecommerce tracking | 
