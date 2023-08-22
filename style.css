@@ -6,7 +6,7 @@ h2 {
 table,
 th,
 td {
-  border: 1px solid;
+  border: 1px solid rgb(168, 168, 168);
   padding: 3px;
 }
 

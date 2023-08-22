@@ -1,7 +1,28 @@
 class TrackerEstate
 
   def initialize
-    @trackers = ["js", "node", "android", "ios", "java"]
+    @trackers = [
+      "js", 
+      "node", 
+      "android", 
+      "ios", 
+      "react_native",
+      "flutter",
+      "python",
+      "ruby",
+      "php",
+      "java",
+      "cpp",
+      "roku",
+      "google_amp",
+      "golang",
+      "unity",
+      "dotnet",
+      "lua",
+      "scala",
+      "rust",
+      "web_view"
+    ]
 
     @features_file = "all_properties/features.md"
     @sessions_file = "all_properties/session.md"
@@ -87,7 +108,7 @@ class TrackerEstate
     html_table
   end
 
-  def output_tables
+  def output_html_file
     output = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" />" \
               "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
         "<title>Snowplow Tracker Estate</title><link rel=\"stylesheet\" href=\"style.css\"></head>" \
@@ -108,4 +129,4 @@ class TrackerEstate
 end
 
 estate = TrackerEstate.new
-estate.output_tables
+estate.output_html_file

@@ -1,29 +1,29 @@
 # DEV GUIDES
 API docs | yes
-Good docs (clear page titles, easy to use) | no
-Basic demo app that just sends events | yes
+Good docs (clear page titles, easy to use) | yes
+Basic demo app that just sends events | no
 Instrumentation apps ("realistic") | no
 Release notes on Github | 
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
-Automated demo building | n/a
+Automated demo building | no
 Automated deploy to package manager | yes
 Automated deploy to Github | 
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
-Custom POST path | yes
+Custom POST path | no
 Custom connection timeout | yes
-Custom request headers | yes
-Custom NetworkConnection/HttpClient | n/a
-Custom max payload size (to deprecate?!) | yes
+Custom request headers | no
+Custom NetworkConnection/HttpClient | no
+Custom max payload size (to deprecate?!) | no
 Custom batch size | yes
 EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
-Custom EventStore | n/a
-Provide stop retry for HTTP error codes | no
+Custom EventStore | yes
+Provide stop retry for HTTP error codes | yes
 Custom threadpool size | 
 Request callback (event sending callback) | 
 Server anonymisation option | 
@@ -33,32 +33,32 @@ Cookie jar |
 Namespace mandatory | yes
 Configurable AppID | yes
 Configurable logger | yes
-Anonymous tracking | yes
-Autotracking session entity | yes
+Anonymous tracking | no
+Autotracking session entity | no
 Autotracking application entity | no
-Autotracking platform entity | yes
+Autotracking platform entity | no
 Autotracking screenView event | no
 Autotracking screen entity | no
 Autotracking lifecycle events | no
-Autotracking exception events | yes
-GDPR entity configuration | yes
-Global contexts | yes
+Autotracking exception events | no
+GDPR entity configuration | no
+Global contexts | no
 Autotracking page entity | 
 Autotracking geolocation entity | 
 Autotracking deeplink entity | 
 Choose which platform entity properties to track | 
 
 # SESSION CONFIGURATION
-Foreground/background timeout | yes
+Foreground/background timeout | no
 onSessionUpdate callback | 
 
 # SUBJECT CONFIGURATION
-Tracker Subject - adds to all events | no
-Event Subject - for that event only | n/a
-Set user-agent | 
-Set custom userID | 
-Set timezone | 
-Set language | 
+Tracker Subject - adds to all events | yes
+Event Subject - for that event only | yes
+Set user-agent | no
+Set custom userID | no
+Set timezone | yes
+Set language | yes
 Set networkUserid | 
 Set domainUserid | 
 Set ipAddress | 
@@ -69,28 +69,28 @@ Set domain sessionId |
 Set domain sessionIndex | 
 
 # EVENT LOSS CALLBACKS
-Sending failure callback | 
-Drop events callback | 
+Sending failure callback | no
+Drop events callback | no
 
 # FEATURES
-Snowplow API (tracker internals hidden inside Snowplow class) | no
+Snowplow API (tracker internals hidden inside Snowplow class) | 
 Remote configuration | no
 Multiple tracker instances | yes
-Track an event on multiple trackers at once | yes
-Event_id and timestamp not overridable | 
-True_timestamp available | yes
+Track an event on multiple trackers at once | no
+Event_id and timestamp not overridable | yes
+True_timestamp available | 
 Sent_timestamp available | yes
-Track returns event_id | no
+Track returns event_id | yes
 Automatically track general atomic fields | yes
-Tracker pausable | 
-Emitter pausable | 
+Tracker pausable | no
+Emitter pausable | no
 Flush events command | yes
 Flush at regular time intervals | no
-Start new session command | yes
-Event index counter for session | yes
-Timestamp on session | yes
+Start new session command | no
+Event index counter for session | no
+Timestamp on session | no
 Asynchronous event sending | yes
-Retry with exponential back-off | no
+Retry with exponential back-off | yes
 Plug-in architecture | yes
 Events are different classes | 
 Events are different functions | 
