@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | 
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | no
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client
+Version | 1.0.3
+Status | Maintained
+Repository | https://github.com/snowplow-incubator/amphtml
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/
+Supported platforms | 

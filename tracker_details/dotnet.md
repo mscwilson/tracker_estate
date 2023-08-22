@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | 
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client+server
+Version | 1.1.0
+Status | Maintained
+Repository | https://github.com/snowplow/snowplow-dotnet-tracker
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/net-tracker/
+Supported platforms | .NET Standard 1.4+

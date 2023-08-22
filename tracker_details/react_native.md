@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client
+Version | 1.2.0
+Status | Actively Maintained
+Repository | https://github.com/snowplow-incubator/snowplow-react-native-tracker
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/react-native-tracker/
+Supported platforms | RN 0.65+, Android tracker v3, iOS tracker v3, Android, AndroidTV, iOS, tvOS

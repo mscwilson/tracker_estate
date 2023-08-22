@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | no
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | server
+Version | 0.8.0
+Status | Early Release
+Repository | https://github.com/snowplow/snowplow-ruby-tracker
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/ruby-tracker/
+Supported platforms | Ruby 3.0+

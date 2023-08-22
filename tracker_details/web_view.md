@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | 
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | 
@@ -148,3 +149,11 @@ Optimisely entity |
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client
+Version | 0.2.0
+Status | Early Release
+Repository | https://github.com/snowplow-incubator/snowplow-webview-tracker
+Documentation | https://docs.snowplow.io/docs/collecting-data/collecting-from-own-applications/webview-tracker/
+Supported platforms | Works with the iOS, Android, and React Native trackers

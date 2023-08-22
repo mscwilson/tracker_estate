@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | n/a
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client+server
+Version | 0.12.0
+Status | Early Release
+Repository | https://github.com/snowplow/snowplow-java-tracker
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/java-tracker/
+Supported platforms | JDK8+

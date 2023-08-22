@@ -51,6 +51,7 @@ Choose which platform entity properties to track |
 # SESSION CONFIGURATION
 Foreground/background timeout | 
 onSessionUpdate callback | 
+Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | no
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client
+Version | 0.1.0
+Status | Maintained
+Repository | n/a
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/pixel-tracker/
+Supported platforms | 

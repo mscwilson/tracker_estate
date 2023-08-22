@@ -59,6 +59,7 @@ class TrackerEstate
     @tests_file = "all_properties/tests_ci.md"
     @events_file = "all_properties/events.md"
     @entities_file = "all_properties/entities.md"
+    @general_file = "all_properties/general.md"
   end
 
   def make_a_single_table(features_filename)
@@ -126,7 +127,7 @@ class TrackerEstate
           if i == 0
             line_with_html << "<td class='description'>#{e}</td>"
           else
-            line_with_html << "<td class='#{e.gsub("/", "")} option'>#{e}</td>"
+            line_with_html << one_single_datapoint_to_html(e)
           end
         end
         html_table << "<tr>#{line_with_html.join}</tr>"
@@ -135,11 +136,28 @@ class TrackerEstate
     html_table
   end
 
+  def one_single_datapoint_to_html(datapoint)
+    if datapoint.start_with? "https://github"
+      "<td class='option'><a href=#{datapoint}>Github</a></td>"
+    elsif datapoint.start_with? "https://docs.snowplow"
+      "<td class='option'><a href=#{datapoint}>Docs</a></td>"
+    elsif datapoint == "Actively Maintained"
+      "<td class='status am' option'>#{datapoint}</td>"
+    elsif datapoint == "Maintained"
+      "<td class='status m' option'>#{datapoint}</td>"
+    elsif datapoint == "Early Release"
+      "<td class='status er' option'>#{datapoint}</td>"
+    else
+      "<td class='#{datapoint.gsub("/", "")} option'>#{datapoint}</td>"
+    end
+  end
+
   def output_html_file
     output = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" />" \
               "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
         "<title>Snowplow Tracker Estate</title><link rel=\"stylesheet\" href=\"style.css\"></head>" \
         "<body><h2>Snowplow Tracker Estate Overview</h2>" \
+        "#{make_a_single_table(@general_file)}<br/>" \
         "#{make_a_single_table(@devrel_file)}<br/>" \
         "#{make_a_single_table(@tests_file)}<br/>" \
         "#{make_a_single_table(@features_file)}<br/>" \
@@ -175,4 +193,4 @@ end
 estate = TrackerEstate.new
 estate.output_html_file
 
-# estate.add_new_property_to_trackers("Media tracking", "Youtube tracking | ")
+# estate.add_new_property_to_trackers("onSessionUpdate callback", "Foreground/background callbacks | ")

@@ -3,14 +3,14 @@ API docs | yes
 Good docs (clear page titles, easy to use) | yes
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | yes
-Release notes on Github | 
+Release notes on Github | yes
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | yes
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | yes
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -23,54 +23,55 @@ Custom batch size | yes
 EventStore has maximum limit | no
 Events are buffered in memory or db | yes
 Custom EventStore | yes
-Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Provide stop retry for HTTP error codes | yes
+Custom threadpool size | yes
+Request callback (event sending callback) | yes
+Server anonymisation option | yes
+Cookie jar | yes
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
 Configurable AppID | yes
 Configurable logger | yes
-Anonymous tracking | no
+Anonymous tracking | yes
 Autotracking session entity | yes
 Autotracking application entity | yes
 Autotracking platform entity | yes
-Autotracking screenView event | yes
+Autotracking screenView event | yes, but...
 Autotracking screen entity | yes
 Autotracking lifecycle events | yes
 Autotracking exception events | yes
 GDPR entity configuration | yes
 Global contexts | yes
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | no
+Autotracking geolocation entity | yes
+Autotracking deeplink entity | yes
+Choose which platform entity properties to track | yes
 
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
-onSessionUpdate callback | 
+onSessionUpdate callback | yes
+Foreground/background callbacks | yes
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
-Event Subject - for that event only | n/a
+Event Subject - for that event only | no
 Set user-agent | yes
 Set custom userID | yes
 Set timezone | yes
 Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Set networkUserid | yes
+Set domainUserid | yes
+Set ipAddress | yes
+Set screen resolution | yes
+Set screen viewport | yes
+Set colour depth | yes
+Set domain sessionId | no
+Set domain sessionIndex | no
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no
-Drop events callback | yes
+Drop events callback | no
 
 # FEATURES
 Snowplow API (tracker internals hidden inside Snowplow class) | yes
@@ -91,23 +92,23 @@ Event index counter for session | yes
 Timestamp on session | yes
 Asynchronous event sending | yes
 Retry with exponential back-off | yes
-Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Plug-in architecture | yes
+Events are different classes | yes
+Events are different functions | no
+Session pausable | yes
+Media tracking | yes
+Youtube tracking | no
+Vimeo tracking | no
+Ecommerce tracking | yes
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
 Unstructured event | no
 Structured event | yes
-Page view event | yes
+Page view event | deprecated
 Mobile screen view event | yes
 Snowplow screen view event | no
-eCommerce events (old) | yes
+eCommerce events (old) | deprecated
 Timing event | yes
 Page ping event | no
 Link click event | no
@@ -148,3 +149,11 @@ Optimisely entity | no
 WebVitals | 
 PrivacySandbox entity | 
 PerformanceNavigationTiming entity | 
+
+# DETAILS
+Client/Server | client
+Version | 5.0.0
+Status | Actively Maintained
+Repository | https://github.com/snowplow/snowplow-android-tracker
+Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/
+Supported platforms | Android, AndroidTV
