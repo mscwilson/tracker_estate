@@ -3,7 +3,8 @@ Start new session command
 Event index counter for session
 Timestamp on session
 Session pausable
-
+Foreground/background timeout
+onSessionUpdate callback
 
 
 

@@ -4,56 +4,47 @@ class TrackerEstate
     @trackers = ["android", "ios", "js", "node", "java"]
     @features_file = "tracker_properties/features.md"
     @sessions_file = "tracker_properties/session.md"
+    @emitter_config_file = "tracker_properties/emitter_network_config.md"
   end
-  
-  def features_table
-    all_features = File.read(@features_file).split("\n")
+
+  def make_a_single_table(features_filename)
+    features_list = File.read(features_filename).split("\n")
+
     tracker_hash = Hash.new { |hash, key| hash[key] = [] }
 
     @trackers.each do |tracker|
       file = File.read("features/#{tracker}_features.md").split("\n")
+      file.map! { |line| line.split("|") }
 
-      file.each do |line|
-        line_sections = line.split("|")
-        next if line_sections[0].include?("#")
+      features_list.each_with_index do |feature, i|
+        next if i == 0
 
-        tracker_hash[tracker] << line_sections[1].strip
+        feature_is_present = false
+        file.each do |line|
+          next if line[0] == nil || line[0].include?("#") 
+
+          if feature == line[0].strip
+            tracker_hash[tracker] << line[1].strip
+            feature_is_present = true
+          end
+        end
+
+        if !feature_is_present
+          tracker_hash[tracker] << ""
+        end
       end
-
     end
 
     add_tracker_name_to_start(tracker_hash)
 
-    html_table = make_array_of_html_table_parts(combine_lists(all_features, tracker_hash).transpose)
+    html_table = make_array_of_html_table_parts(combine_lists(features_list, tracker_hash).transpose)
     html_table.flatten.join + "</tbody></table>"
-  end
 
-  def session_table
-    session_features = File.read(@sessions_file).split("\n")
-    tracker_hash = Hash.new { |hash, key| hash[key] = [] }
-
-    @trackers.each do |tracker|
-      file = File.read("features/#{tracker}_features.md").split("\n")
-
-      file.each do |line|
-        line_sections = line.split("|")
-        next if line_sections[0].include?("#")
-        next if !session_features.include?(line_sections[0].gsub("\t", ""))
-
-        tracker_hash[tracker] << line_sections[1].strip
-      end
-
-    end
-
-    add_tracker_name_to_start(tracker_hash)
-
-    html_table = make_array_of_html_table_parts(combine_lists(session_features, tracker_hash).transpose)
-    html_table.flatten.join + "</tbody></table>"
   end
 
   def add_tracker_name_to_start(dict)
     dict.each do |k, v|
-      v.unshift(k)
+      v.unshift(k.upcase)
     end
   end
 
@@ -95,7 +86,9 @@ class TrackerEstate
               "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
         "<title>Snowplow Tracker Estate</title><link rel=\"stylesheet\" href=\"style.css\"></head>" \
         "<body><h2>Snowplow Tracker Estate Overview</h2>" \
-        "#{features_table}<br/>#{session_table}</body></html>"
+        "#{make_a_single_table(@features_file)}<br/>#{make_a_single_table(@sessions_file)}<br/>" \
+        "#{make_a_single_table(@emitter_config_file)}<br/></body></html>"
+        
     File.open("test.html", "w") { |f| f.write(output) }
   end
 

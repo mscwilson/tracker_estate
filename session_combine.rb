@@ -14,10 +14,10 @@ trackers = ["android", "ios", "js", "node", "java"]
 # }
 
 
-session_features = File.read(sessions_file).split("\n")
+features_list = File.read(sessions_file).split("\n")
 tracker_hash = Hash.new { |hash, key| hash[key] = [] }
 
-p session_features
+p features_list
 
 trackers.each do |tracker|
   file = File.read("features/#{tracker}_features.md").split("\n")
@@ -25,7 +25,7 @@ trackers.each do |tracker|
   file.each do |line|
     line_sections = line.split("|")
     next if line_sections[0].include?("#")
-    next if !session_features.include?(line_sections[0].gsub("\t", ""))
+    next if !features_list.include?(line_sections[0].gsub("\t", ""))
 
     tracker_hash[tracker] << line_sections[1].strip
   end
@@ -36,7 +36,7 @@ tracker_hash.each do |k, v|
   v.unshift(k)
 end
 
-all_the_lists = [session_features]
+all_the_lists = [features_list]
 trackers.each do |tracker|
   all_the_lists << tracker_hash[tracker]
 end
