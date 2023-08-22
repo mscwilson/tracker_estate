@@ -1,10 +1,16 @@
 class TrackerEstate
 
   def initialize
-    @trackers = ["android", "ios", "js", "node", "java"]
-    @features_file = "tracker_properties/features.md"
-    @sessions_file = "tracker_properties/session.md"
-    @emitter_config_file = "tracker_properties/emitter_network_config.md"
+    @trackers = ["js", "node", "android", "ios", "java"]
+
+    @features_file = "all_properties/features.md"
+    @sessions_file = "all_properties/session.md"
+    @emitter_config_file = "all_properties/emitter_network_config.md"
+    @subject_config_file = "all_properties/subject_config.md"
+    @tracker_config_file = "all_properties/tracker_config.md"
+    @callbacks_file = "all_properties/callbacks.md"
+    @devrel_file = "all_properties/devrel.md"
+    @tests_file = "all_properties/tests_ci.md"
   end
 
   def make_a_single_table(features_filename)
@@ -13,7 +19,7 @@ class TrackerEstate
     tracker_hash = Hash.new { |hash, key| hash[key] = [] }
 
     @trackers.each do |tracker|
-      file = File.read("features/#{tracker}_features.md").split("\n")
+      file = File.read("tracker_details/#{tracker}.md").split("\n")
       file.map! { |line| line.split("|") }
 
       features_list.each_with_index do |feature, i|
@@ -86,8 +92,15 @@ class TrackerEstate
               "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
         "<title>Snowplow Tracker Estate</title><link rel=\"stylesheet\" href=\"style.css\"></head>" \
         "<body><h2>Snowplow Tracker Estate Overview</h2>" \
-        "#{make_a_single_table(@features_file)}<br/>#{make_a_single_table(@sessions_file)}<br/>" \
-        "#{make_a_single_table(@emitter_config_file)}<br/></body></html>"
+        "#{make_a_single_table(@features_file)}<br/>" \
+        "#{make_a_single_table(@sessions_file)}<br/>" \
+        "#{make_a_single_table(@emitter_config_file)}<br/>" \
+        "#{make_a_single_table(@subject_config_file)}<br/>" \
+        "#{make_a_single_table(@tracker_config_file)}<br/>" \
+        "#{make_a_single_table(@callbacks_file)}<br/>" \
+        "#{make_a_single_table(@devrel_file)}<br/>" \
+        "#{make_a_single_table(@tests_file)}<br/>" \
+        "</body></html>"
         
     File.open("test.html", "w") { |f| f.write(output) }
   end
