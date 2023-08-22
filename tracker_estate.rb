@@ -24,6 +24,29 @@ class TrackerEstate
       "web_view"
     ]
 
+    @tracker_names = {
+      "js" => "JavaScript", 
+      "node" => "Node.js", 
+      "android" => "Android", 
+      "ios" => "iOS", 
+      "react_native" => "React Native",
+      "flutter" => "Flutter",
+      "python" => "Python",
+      "ruby" => "Ruby",
+      "php" => "PHP",
+      "java" => "Java",
+      "cpp" => "C++",
+      "roku" => "Roku",
+      "google_amp" => "AMP",
+      "golang" => "Golang",
+      "unity" => "Unity",
+      "dotnet" => ".NET",
+      "lua" => "Lua",
+      "scala" => "Scala",
+      "rust" => "Rust",
+      "web_view" => "WebView"
+    }
+
     @features_file = "all_properties/features.md"
     @sessions_file = "all_properties/session.md"
     @emitter_config_file = "all_properties/emitter_network_config.md"
@@ -71,7 +94,7 @@ class TrackerEstate
 
   def add_tracker_name_to_start(dict)
     dict.each do |k, v|
-      v.unshift(k.upcase)
+      v.unshift(@tracker_names[k])
     end
   end
 
@@ -113,14 +136,14 @@ class TrackerEstate
               "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
         "<title>Snowplow Tracker Estate</title><link rel=\"stylesheet\" href=\"style.css\"></head>" \
         "<body><h2>Snowplow Tracker Estate Overview</h2>" \
+        "#{make_a_single_table(@devrel_file)}<br/>" \
+        "#{make_a_single_table(@tests_file)}<br/>" \
         "#{make_a_single_table(@features_file)}<br/>" \
         "#{make_a_single_table(@sessions_file)}<br/>" \
         "#{make_a_single_table(@emitter_config_file)}<br/>" \
         "#{make_a_single_table(@subject_config_file)}<br/>" \
         "#{make_a_single_table(@tracker_config_file)}<br/>" \
         "#{make_a_single_table(@callbacks_file)}<br/>" \
-        "#{make_a_single_table(@devrel_file)}<br/>" \
-        "#{make_a_single_table(@tests_file)}<br/>" \
         "</body></html>"
         
     File.open("test.html", "w") { |f| f.write(output) }
