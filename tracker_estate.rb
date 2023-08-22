@@ -146,10 +146,27 @@ class TrackerEstate
         "#{make_a_single_table(@callbacks_file)}<br/>" \
         "</body></html>"
         
-    File.open("test.html", "w") { |f| f.write(output) }
+    File.open("snowplow_tracker_estate.html", "w") { |f| f.write(output) }
+  end
+
+  def add_new_property_to_trackers(insert_after_this_text, new_text)
+    @trackers.each do |tracker|
+      file = File.read("tracker_details/#{tracker}.md").split("\n")
+
+      file.each_with_index do |line, i|
+        if line == insert_after_this_text
+          file.insert(i+1, new_text)
+          break
+        end
+      end
+
+      File.open("tracker_details/#{tracker}.md", "w") { |f| f.write(test_file.join("\n")) }
+    end
   end
 
 end
 
 estate = TrackerEstate.new
-estate.output_html_file
+# estate.output_html_file
+estate.add_new_property_to_trackers("Session pausable | ", "Media tracking | ")
+estate.add_new_property_to_trackers("Media tracking | ", "Ecommerce tracking | ")
