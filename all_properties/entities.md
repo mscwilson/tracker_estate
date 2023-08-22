@@ -1,0 +1,18 @@
+OUT-OF-THE-BOX ENTITIES
+DesktopContext
+MobileContext / platformContext
+DeviceContext
+ApplicationContext
+GeoLocationContext
+SessionContext
+ScreenContext
+gdpr/consent entity
+DeepLinkContext
+WebPageContext
+PerformanceTiming entity
+gaCookies entity
+ClientHints entity
+Optimisely entity
+WebVitals
+PrivacySandbox entity
+PerformanceNavigationTiming entity

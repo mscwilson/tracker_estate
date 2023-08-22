@@ -45,7 +45,8 @@ class TrackerEstate
       "lua" => "Lua",
       "scala" => "Scala",
       "rust" => "Rust",
-      "web_view" => "WebView"
+      "web_view" => "WebView",
+      "pixel" => "Pixel"
     }
 
     @features_file = "all_properties/features.md"
@@ -56,6 +57,8 @@ class TrackerEstate
     @callbacks_file = "all_properties/callbacks.md"
     @devrel_file = "all_properties/devrel.md"
     @tests_file = "all_properties/tests_ci.md"
+    @events_file = "all_properties/events.md"
+    @entities_file = "all_properties/entities.md"
   end
 
   def make_a_single_table(features_filename)
@@ -123,7 +126,7 @@ class TrackerEstate
           if i == 0
             line_with_html << "<td class='description'>#{e}</td>"
           else
-            line_with_html << "<td class='#{e} option'>#{e}</td>"
+            line_with_html << "<td class='#{e.gsub("/", "")} option'>#{e}</td>"
           end
         end
         html_table << "<tr>#{line_with_html.join}</tr>"
@@ -145,6 +148,8 @@ class TrackerEstate
         "#{make_a_single_table(@subject_config_file)}<br/>" \
         "#{make_a_single_table(@tracker_config_file)}<br/>" \
         "#{make_a_single_table(@callbacks_file)}<br/>" \
+        "#{make_a_single_table(@events_file)}<br/>" \
+        "#{make_a_single_table(@entities_file)}<br/>" \
         "</body></html>\n"
         
     File.open("snowplow_tracker_estate.html", "w") { |f| f.write(output) }
@@ -170,4 +175,4 @@ end
 estate = TrackerEstate.new
 estate.output_html_file
 
-# estate.add_new_property_to_trackers("Media tracking", "Ecommerce tracking | ")
+# estate.add_new_property_to_trackers("Media tracking", "Youtube tracking | ")

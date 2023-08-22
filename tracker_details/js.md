@@ -96,5 +96,56 @@ Plug-in architecture | yes
 Events are different classes | 
 Events are different functions | 
 Session pausable | 
-Media tracking | 
-Ecommerce tracking | 
+Media tracking | yes
+Youtube tracking | yes
+Vimeo tracking | yes
+Ecommerce tracking | yes
+
+# OUT-OF-THE-BOX EVENTS
+Self-describing event | yes
+Unstructured event | no
+Structured event | yes
+Page view event | yes
+Mobile screen view event | no
+Snowplow screen view event | yes
+eCommerce events (old) | yes
+Timing event | yes
+Page ping event | yes
+Link click event | yes
+Form change event | yes
+Form submit event | yes
+Form focus event | yes
+Site search event | yes
+Add to cart event (old) | yes
+Remove from cart event (old) | yes
+Error/exception event | yes
+App lifecycle event | n/a
+Installation event | n/a
+Consent granted event | yes
+Consent withdrawn event | yes
+Push notification event | n/a
+Deep link event | n/a
+Social media event | yes
+Ad impression event | yes
+Ad click event | yes
+Ad conversion event | yes
+WebVitals event | yes
+
+# OUT-OF-THE-BOX ENTITIES
+DesktopContext | no
+MobileContext / platformContext | yes
+DeviceContext | no
+ApplicationContext | no
+GeoLocationContext | yes
+SessionContext | yes
+ScreenContext | no
+gdpr/consent entity | yes
+DeepLinkContext | no
+WebPageContext | yes
+PerformanceTiming entity | yes
+gaCookies entity | yes
+ClientHints entity | yes
+Optimisely entity | yes
+WebVitals | yes
+PrivacySandbox entity | yes
+PerformanceNavigationTiming entity | yes

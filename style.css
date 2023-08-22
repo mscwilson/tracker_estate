@@ -19,7 +19,11 @@ td.yes {
 }
 
 td.no {
-  background-color: rgb(247, 159, 159);
+  background-color: rgb(250, 204, 204);
+}
+
+td.na {
+  background-color: rgb(243, 249, 246);
 }
 
 td.option {

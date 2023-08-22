@@ -96,4 +96,55 @@ Events are different classes |
 Events are different functions | 
 Session pausable | 
 Media tracking | 
+Youtube tracking | 
+Vimeo tracking | 
 Ecommerce tracking | 
+
+# OUT-OF-THE-BOX EVENTS
+Self-describing event | yes
+Unstructured event | yes
+Structured event | yes
+Page view event | no
+Mobile screen view event | yes
+Snowplow screen view event | yes
+eCommerce events (old) | no
+Timing event | no
+Page ping event | no
+Link click event | no
+Form change event | no
+Form submit event | no
+Form focus event | no
+Site search event | no
+Add to cart event (old) | no
+Remove from cart event (old) | no
+Error/exception event | no
+App lifecycle event | no
+Installation event | no
+Consent granted event | no
+Consent withdrawn event | no
+Push notification event | no
+Deep link event | no
+Social media event | no
+Ad impression event | no
+Ad click event | no
+Ad conversion event | no
+WebVitals event | no
+
+# OUT-OF-THE-BOX ENTITIES
+DesktopContext | no
+MobileContext / platformContext | no
+DeviceContext | no
+ApplicationContext | no
+GeoLocationContext | no
+SessionContext | no
+ScreenContext | no
+gdpr/consent entity | no
+DeepLinkContext | no
+WebPageContext | no
+PerformanceTiming entity | no
+gaCookies entity | no
+ClientHints entity | no
+Optimisely entity | no
+WebVitals | 
+PrivacySandbox entity | 
+PerformanceNavigationTiming entity | 
