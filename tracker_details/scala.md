@@ -156,4 +156,4 @@ Version | 1.0.1
 Status | Maintained
 Repository | https://github.com/snowplow/snowplow-scala-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/scala-tracker/
-Supported platforms | 
+Supported platforms | servers

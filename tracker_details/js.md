@@ -24,9 +24,9 @@ EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
 Custom EventStore | n/a
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
+Custom threadpool size | n/a
+Request callback (event sending callback) | no
+Server anonymisation option | y
 Cookie jar | 
 
 # TRACKER CONFIGURATION
@@ -44,15 +44,15 @@ Autotracking exception events | yes
 GDPR entity configuration | yes
 Global contexts | yes
 Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking geolocation entity | y
+Autotracking deeplink entity | n/a
+Choose which platform entity properties to track | n
 
 
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+onSessionUpdate callback | y
+Foreground/background callbacks | n/a
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | no
@@ -76,7 +76,7 @@ Drop events callback |
 
 
 # FEATURES
-Snowplow API (tracker internals hidden inside Snowplow class) | no
+Snowplow API (tracker internals hidden inside Snowplow class) | no | the tracker internals are hidden though
 Remote configuration | no
 Multiple tracker instances | yes
 Track an event on multiple trackers at once | yes
@@ -85,8 +85,8 @@ True_timestamp available | yes
 Sent_timestamp available | yes
 Track returns event_id | no
 Automatically track general atomic fields | yes
-Tracker pausable | 
-Emitter pausable | 
+Tracker pausable | y
+Emitter pausable | n/a
 Flush events command | yes
 Flush at regular time intervals | no
 Start new session command | yes
@@ -95,9 +95,9 @@ Timestamp on session | yes
 Asynchronous event sending | yes
 Retry with exponential back-off | no
 Plug-in architecture | yes
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
+Events are different classes | n
+Events are different functions | y
+Session pausable | n
 Media tracking | yes
 Youtube tracking | yes
 Vimeo tracking | yes
@@ -150,12 +150,12 @@ ClientHints entity | yes
 Optimisely entity | yes
 WebVitals | yes
 PrivacySandbox entity | yes
-PerformanceNavigationTiming entity | 
+PerformanceNavigationTiming entity | y
 
 # DETAILS
 Client/Server | client
-Version | 3.5.0
+Version | 3.14.0
 Status | Actively Maintained
 Repository | https://github.com/snowplow/snowplow-javascript-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-tracker/
-Supported platforms | 
+Supported platforms | web

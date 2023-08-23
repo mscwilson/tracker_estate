@@ -3,7 +3,7 @@ API docs | yes
 Good docs (clear page titles, easy to use) | no
 Basic demo app that just sends events | no
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | n
 
 # TESTS AND CI
 Automated unit tests | yes
@@ -46,28 +46,28 @@ Global contexts | no
 Autotracking page entity | 
 Autotracking geolocation entity | 
 Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+onSessionUpdate callback | no 
+Foreground/background callbacks | n/a
 
 # SUBJECT CONFIGURATION
-Tracker Subject - adds to all events | yes
+Tracker Subject - adds to all events | no
 Event Subject - for that event only | no
-Set user-agent | 
-Set custom userID | 
-Set timezone | 
-Set language | 
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Set user-agent | y
+Set custom userID | y
+Set timezone | y
+Set language | y
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | y
+Set domain sessionIndex | y
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | 
@@ -83,7 +83,7 @@ True_timestamp available | yes
 Sent_timestamp available | yes
 Track returns event_id | no
 Automatically track general atomic fields | yes
-Tracker pausable | 
+Tracker pausable | n
 Emitter pausable | 
 Flush events command | yes
 Flush at regular time intervals | no
@@ -93,17 +93,17 @@ Timestamp on session | no
 Asynchronous event sending | yes
 Retry with exponential back-off | yes
 Plug-in architecture | yes
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | n
+Events are different functions | y
+Session pausable | n
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
-Unstructured event | yes
+Unstructured event | no
 Structured event | yes
 Page view event | yes
 Mobile screen view event | no
@@ -153,8 +153,8 @@ PerformanceNavigationTiming entity |
 
 # DETAILS
 Client/Server | server
-Version | 3.5.0
+Version | 3.14.0
 Status | Actively Maintained
 Repository | https://github.com/snowplow/snowplow-javascript-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/
-Supported platforms | 
+Supported platforms | servers

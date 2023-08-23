@@ -3,14 +3,14 @@ API docs | yes
 Good docs (clear page titles, easy to use) | yes
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | yes
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | yes
 Automated deploy to package manager | no
-Automated deploy to Github | 
+Automated deploy to Github | n
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -24,10 +24,10 @@ EventStore has maximum limit | no
 Events are buffered in memory or db | yes
 Custom EventStore | yes
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | y
+Request callback (event sending callback) | y
+Server anonymisation option | y
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
@@ -37,37 +37,37 @@ Anonymous tracking | no
 Autotracking session entity | yes
 Autotracking application entity | yes
 Autotracking platform entity | yes
-Autotracking screenView event | yes
+Autotracking screenView event | yes, but... | for SwiftUI apps, it's semi-automatic - the Views have to be labelled
 Autotracking screen entity | yes
 Autotracking lifecycle events | yes
 Autotracking exception events | yes
 GDPR entity configuration | yes
 Global contexts | yes
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n/a
+Autotracking geolocation entity | y
+Autotracking deeplink entity | y
+Choose which platform entity properties to track | y
 
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
-onSessionUpdate callback | 
+onSessionUpdate callback | y
 Foreground/background callbacks | 
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
-Event Subject - for that event only | n/a
+Event Subject - for that event only | n
 Set user-agent | yes
 Set custom userID | yes
 Set timezone | yes
 Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | n
+Set domain sessionIndex | n
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no
@@ -93,13 +93,13 @@ Timestamp on session | yes
 Asynchronous event sending | yes
 Retry with exponential back-off | yes
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | y
+Events are different functions | n
+Session pausable | y
+Media tracking | y
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | Y
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -141,18 +141,18 @@ SessionContext | yes
 ScreenContext | yes
 gdpr/consent entity | yes
 DeepLinkContext | yes
-WebPageContext | no
-PerformanceTiming entity | no
-gaCookies entity | no
-ClientHints entity | no
-Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebPageContext | n/a
+PerformanceTiming entity | n/a
+gaCookies entity | n/a
+ClientHints entity | n/a
+Optimisely entity | n/a
+WebVitals | n/a
+PrivacySandbox entity | n/a
+PerformanceNavigationTiming entity | n/a
 
 # DETAILS
 Client/Server | client
-Version | 5.0.0
+Version | 5.4.2
 Status | Actively Maintained
 Repository | https://github.com/snowplow/snowplow-objc-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/objective-c-tracker/

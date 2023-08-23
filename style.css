@@ -14,12 +14,12 @@ th {
   color: rgb(62, 4, 96);
 }
 
-td.yes {
-  background-color: rgb(159, 247, 200);
+td.no {
+  background-color: rgb(251, 236, 236);
 }
 
-td.no {
-  background-color: rgb(250, 204, 204);
+td.yes {
+  background-color: rgb(159, 247, 200);
 }
 
 td.deprecated {

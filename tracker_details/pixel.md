@@ -156,4 +156,4 @@ Version | 0.1.0
 Status | Maintained
 Repository | n/a
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/pixel-tracker/
-Supported platforms | 
+Supported platforms | web, email

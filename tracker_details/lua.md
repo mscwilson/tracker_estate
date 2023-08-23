@@ -156,4 +156,4 @@ Version | 0.2.0
 Status | Early Release
 Repository | https://github.com/snowplow/snowplow-lua-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/lua-tracker/
-Supported platforms | 
+Supported platforms | servers

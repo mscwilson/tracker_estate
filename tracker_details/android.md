@@ -10,7 +10,7 @@ Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | yes
 Automated deploy to package manager | yes
-Automated deploy to Github | yes
+Automated deploy to Github | n
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -141,18 +141,18 @@ SessionContext | yes
 ScreenContext | yes
 gdpr/consent entity | yes
 DeepLinkContext | yes
-WebPageContext | no
-PerformanceTiming entity | no
-gaCookies entity | no
-ClientHints entity | no
-Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebPageContext | n/a
+PerformanceTiming entity | n/a
+gaCookies entity | n/a
+ClientHints entity | n/a
+Optimisely entity | n/a
+WebVitals | n/a
+PrivacySandbox entity | n/a
+PerformanceNavigationTiming entity | n/a
 
 # DETAILS
 Client/Server | client
-Version | 5.0.0
+Version | 5.4.2
 Status | Actively Maintained
 Repository | https://github.com/snowplow/snowplow-android-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/node-js-tracker/

@@ -156,4 +156,4 @@ Version | 0.2.0
 Status | Early Release
 Repository | https://github.com/snowplow-incubator/snowplow-roku-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/roku-tracker/
-Supported platforms | 
+Supported platforms | Roku

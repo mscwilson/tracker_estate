@@ -156,4 +156,4 @@ Version | 0.2.0
 Status | Early Release
 Repository | https://github.com/snowplow/snowplow-rust-tracker
 Documentation | https://docs.snowplow.io/docs/collecting-data/collecting-from-own-applications/rust-tracker/
-Supported platforms | 
+Supported platforms | ?

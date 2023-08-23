@@ -156,4 +156,4 @@ Version | 1.0.3
 Status | Maintained
 Repository | https://github.com/snowplow-incubator/amphtml
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/
-Supported platforms | 
+Supported platforms | web

@@ -1,6 +1,6 @@
-features_file = "tracker_properties/features.md"
+features_file = 'tracker_properties/features.md'
 
-trackers = ["android", "ios", "js", "node", "java"]
+trackers = %w[android ios js node java]
 
 # possible_values = {
 #   "" => "",
@@ -11,7 +11,6 @@ trackers = ["android", "ios", "js", "node", "java"]
 #   "na" => "N/A"
 # }
 
-
 all_features = File.read(features_file).split("\n")
 tracker_hash = Hash.new { |hash, key| hash[key] = [] }
 
@@ -19,12 +18,11 @@ trackers.each do |tracker|
   file = File.read("features/#{tracker}_features.md").split("\n")
 
   file.each do |line|
-    line_sections = line.split("|")
-    next if line_sections[0].include?("#")
+    line_sections = line.split('|')
+    next if line_sections[0].include?('#')
 
     tracker_hash[tracker] << line_sections[1].strip
   end
-
 end
 
 tracker_hash.each do |k, v|
@@ -57,13 +55,12 @@ table.each_with_index do |line, i|
   end
 end
 
-html_table_string = html_table.flatten.join + "</tbody></table>"
+html_table_string = html_table.flatten.join + '</tbody></table>'
 
-output = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" />" \
-          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
+output = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />' \
+          '<meta name="viewport" content="width=device-width, initial-scale=1.0" />' \
     "<title>Snowplow Tracker Estate</title></head><body><h2>Snowplow Tracker Estate Overview</h2>#{html_table_string}<br/></body></html>"
-File.open("test.html", "w") { |f| f.write(output) }
-
+File.open('test.html', 'w') { |f| f.write(output) }
 
 # to produce markdown table
 
@@ -84,5 +81,3 @@ File.open("test.html", "w") { |f| f.write(output) }
 
 # output = new_table.flatten.join
 # File.open("test.md", "w") { |f| f.write(output) }
-
-

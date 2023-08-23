@@ -1,65 +1,64 @@
 class TrackerEstate
-
   def initialize
-    @trackers = [
-      "js", 
-      "node", 
-      "android", 
-      "ios", 
-      "react_native",
-      "flutter",
-      "python",
-      "ruby",
-      "php",
-      "java",
-      "cpp",
-      "roku",
-      "google_amp",
-      "golang",
-      "unity",
-      "dotnet",
-      "lua",
-      "scala",
-      "rust",
-      "web_view",
-      "pixel"
+    @trackers = %w[
+      js
+      node
+      android
+      ios
+      react_native
+      flutter
+      python
+      ruby
+      php
+      java
+      cpp
+      roku
+      google_amp
+      golang
+      unity
+      dotnet
+      lua
+      scala
+      rust
+      web_view
+      pixel
     ]
 
     @tracker_names = {
-      "js" => "JavaScript", 
-      "node" => "Node.js", 
-      "android" => "Android", 
-      "ios" => "iOS", 
-      "react_native" => "React Native",
-      "flutter" => "Flutter",
-      "python" => "Python",
-      "ruby" => "Ruby",
-      "php" => "PHP",
-      "java" => "Java",
-      "cpp" => "C++",
-      "roku" => "Roku",
-      "google_amp" => "AMP",
-      "golang" => "Golang",
-      "unity" => "Unity",
-      "dotnet" => ".NET",
-      "lua" => "Lua",
-      "scala" => "Scala",
-      "rust" => "Rust",
-      "web_view" => "WebView",
-      "pixel" => "Pixel"
+      'js' => 'JavaScript',
+      'node' => 'Node.js',
+      'android' => 'Android',
+      'ios' => 'iOS',
+      'react_native' => 'React Native',
+      'flutter' => 'Flutter',
+      'python' => 'Python',
+      'ruby' => 'Ruby',
+      'php' => 'PHP',
+      'java' => 'Java',
+      'cpp' => 'C++',
+      'roku' => 'Roku',
+      'google_amp' => 'AMP',
+      'golang' => 'Golang',
+      'unity' => 'Unity',
+      'dotnet' => '.NET',
+      'lua' => 'Lua',
+      'scala' => 'Scala',
+      'rust' => 'Rust',
+      'web_view' => 'WebView',
+      'pixel' => 'Pixel'
     }
 
-    @features_file = "all_properties/features.md"
-    @sessions_file = "all_properties/session.md"
-    @emitter_config_file = "all_properties/emitter_network_config.md"
-    @subject_config_file = "all_properties/subject_config.md"
-    @tracker_config_file = "all_properties/tracker_config.md"
-    @callbacks_file = "all_properties/callbacks.md"
-    @devrel_file = "all_properties/devrel.md"
-    @tests_file = "all_properties/tests_ci.md"
-    @events_file = "all_properties/events.md"
-    @entities_file = "all_properties/entities.md"
-    @general_file = "all_properties/general.md"
+    @features_file = 'all_properties/features.md'
+    @sessions_file = 'all_properties/session.md'
+    @emitter_config_file = 'all_properties/emitter_network_config.md'
+    @subject_config_file = 'all_properties/subject_config.md'
+    @tracker_config_file = 'all_properties/tracker_config.md'
+    @callbacks_file = 'all_properties/callbacks.md'
+    @devrel_file = 'all_properties/devrel.md'
+    @tests_file = 'all_properties/tests_ci.md'
+    @events_file = 'all_properties/events.md'
+    @entities_file = 'all_properties/entities.md'
+    @general_file = 'all_properties/general.md'
   end
 
   def make_a_single_table(features_filename)
@@ -69,40 +68,39 @@ class TrackerEstate
 
     @trackers.each do |tracker|
       file = File.read("tracker_details/#{tracker}.md").split("\n")
-      file.map! { |line| line.split("|") }
+      file.map! { |line| line.split('|') }
 
       features_list.each_with_index do |feature, i|
         next if i == 0
 
         feature_is_present = false
         file.each do |line|
-          next if line[0] == nil || line[0].include?("#") 
+          next if line[0].nil? || line[0].include?('#')
 
-          if feature == line[0].strip
-            option = line[1].strip
-            option = "yes" if option == "y"
-            option = "no" if option == "n"
+          next unless feature == line[0].strip
 
-            if line.length == 3
-              tracker_hash[tracker] << [option, line[2].strip]
-            else
-              tracker_hash[tracker] << [option, ""]
-            end
-            feature_is_present = true
-          end
+          option = line[1].strip
+          option = 'yes' if %w[y Y Yes YES].include?(option)
+          option = 'no' if %w[n N No NO].include?(option)
+
+          tracker_hash[tracker] << if line.length == 3
+                                     # allows for a comment
+                                     [option, line[2].strip]
+                                   else
+                                     [option, '']
+                                   end
+
+          feature_is_present = true
         end
 
-        if !feature_is_present
-          tracker_hash[tracker] << ["",""]
-        end
+        tracker_hash[tracker] << ['', ''] unless feature_is_present
       end
     end
 
     add_tracker_name_to_start(tracker_hash)
 
     html_table = make_array_of_html_table_parts(combine_lists(features_list, tracker_hash).transpose)
-    html_table.flatten.join + "</tbody></table>"
-
+    html_table.flatten.join + '</tbody></table>'
   end
 
   def add_tracker_name_to_start(dict)
@@ -132,11 +130,11 @@ class TrackerEstate
       else
         line_with_html = []
         line.each_with_index do |e, i|
-          if i == 0
-            line_with_html << "<td class='description'>#{e}</td>"
-          else
-            line_with_html << one_single_datapoint_to_html(e)
-          end
+          line_with_html << if i == 0
+                              "<td class='description'>#{e}</td>"
+                            else
+                              one_single_datapoint_to_html(e)
+                            end
         end
         html_table << "<tr>#{line_with_html.join}</tr>"
       end
@@ -147,38 +145,38 @@ class TrackerEstate
   def one_single_datapoint_to_html(entry)
     datapoint = entry[0]
 
-    if datapoint.start_with? "https://github"
+    if datapoint.start_with? 'https://github'
       return "<td class='option'><a href=#{datapoint}>Github</a></td>"
-    elsif datapoint.start_with? "https://docs.snowplow"
+    elsif datapoint.start_with? 'https://docs.snowplow'
       return "<td class='option'><a href=#{datapoint}>Docs</a></td>"
     end
 
-    classes = ["option"]
-    case datapoint
-    when "Actively Maintained"
-      classes << "status am"
-    when "Maintained"
-      classes << "status am"
-    when "Early Release"
-      classes << "status er"
-    when "yes, but..."
-      classes << "but"
-    else
-      classes << datapoint.gsub("/", "")
-    end
+    classes = ['option']
+    classes << case datapoint
+               when 'Actively Maintained'
+                 'status am'
+               when 'Maintained'
+                 'status m'
+               when 'Early Release'
+                 'status er'
+               when 'yes, but...'
+                 'but'
+               when ''
+                 'no'
+               else
+                 datapoint.gsub('/', '')
+               end
 
-    if entry[1] == ""
-      return "<td class='#{classes.join(" ")}'>#{datapoint}</td>"
-    else
-      return "<td class='#{classes.join(" ")} tooltip'>#{datapoint}<span class='tooltiptext'>#{entry[1]}</span></td>"
-    end
+    return "<td class='#{classes.join(' ')}'>#{datapoint}</td>" if entry[1] == ''
+
+    "<td class='#{classes.join(' ')} tooltip'>#{datapoint} *<span class='tooltiptext'>#{entry[1]}</span></td>"
   end
 
   def output_html_file
-    output = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" />" \
-              "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />" \
-        "<title>Snowplow Tracker Estate</title><link rel=\"stylesheet\" href=\"style.css\"></head>" \
-        "<body><h2>Snowplow Tracker Estate Overview</h2>" \
+    output = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />' \
+              '<meta name="viewport" content="width=device-width, initial-scale=1.0" />' \
+        '<title>Snowplow Tracker Estate</title><link rel="stylesheet" href="style.css"></head>' \
+        '<body><h2>Snowplow Tracker Estate Overview</h2>' \
         "#{make_a_single_table(@general_file)}<br/>" \
         "#{make_a_single_table(@devrel_file)}<br/>" \
         "#{make_a_single_table(@tests_file)}<br/>" \
@@ -191,25 +189,24 @@ class TrackerEstate
         "#{make_a_single_table(@events_file)}<br/>" \
         "#{make_a_single_table(@entities_file)}<br/>" \
         "</body></html>\n"
-        
-    File.open("snowplow_tracker_estate.html", "w") { |f| f.write(output) }
+
+    File.open('snowplow_tracker_estate.html', 'w') { |f| f.write(output) }
   end
 
   def add_new_property_to_trackers(insert_after_this_text, new_text)
     @trackers.each do |tracker|
       file = File.read("tracker_details/#{tracker}.md").split("\n")
-      
+
       file.each_with_index do |line, i|
         if line.include? insert_after_this_text
-          file.insert(i+1, new_text)
+          file.insert(i + 1, new_text)
           break
         end
       end
 
-      File.open("tracker_details/#{tracker}.md", "w") { |f| f.write(file.join("\n")) }
+      File.open("tracker_details/#{tracker}.md", 'w') { |f| f.write(file.join("\n")) }
     end
   end
-
 end
 
 estate = TrackerEstate.new
