@@ -51,7 +51,7 @@ Choose which platform entity properties to track | y
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
 onSessionUpdate callback | y
-Foreground/background callbacks | 
+Foreground/background callbacks | n
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -92,7 +92,7 @@ Event index counter for session | yes
 Timestamp on session | yes
 Asynchronous event sending | yes
 Retry with exponential back-off | yes
-Plug-in architecture | no
+Plug-in architecture | y
 Events are different classes | y
 Events are different functions | n
 Session pausable | y

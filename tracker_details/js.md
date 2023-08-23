@@ -1,6 +1,6 @@
 # DEV GUIDES
 API docs | yes 
-Good docs (clear page titles, easy to use) | no 
+Good docs (clear page titles, easy to use) | no | they're terrible
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | no
 Release notes on Github | no
@@ -71,8 +71,8 @@ Set domain sessionId |
 Set domain sessionIndex | 
 
 # EVENT LOSS CALLBACKS
-Sending failure callback | 
-Drop events callback | 
+Sending failure callback | n
+Drop events callback | n
 
 
 # FEATURES

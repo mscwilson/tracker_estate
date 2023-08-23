@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class TrackerEstate
   def initialize
+    # this is the order the trackers will be in the finished tables
     @trackers = %w[
       js
       node
@@ -71,7 +74,7 @@ class TrackerEstate
       file.map! { |line| line.split('|') }
 
       features_list.each_with_index do |feature, i|
-        next if i == 0
+        next if i.zero?
 
         feature_is_present = false
         file.each do |line|
@@ -100,7 +103,11 @@ class TrackerEstate
     add_tracker_name_to_start(tracker_hash)
 
     html_table = make_array_of_html_table_parts(combine_lists(features_list, tracker_hash).transpose)
-    html_table.flatten.join + '</tbody></table>'
+    "#{html_table.flatten.join}</tbody></table>"
+  end
+
+  def read_tracker_details(tracker)
+    
   end
 
   def add_tracker_name_to_start(dict)
@@ -121,16 +128,15 @@ class TrackerEstate
     html_table = []
 
     table.each_with_index do |line, i|
-      if i == 0
-        line_with_html = []
+      line_with_html = []
+      if i.zero?
         line.each do |e|
           line_with_html << "<th>#{e}</th>"
         end
         html_table << "<table><thead><tr>#{line_with_html.join}</tr></thead><tbody>"
       else
-        line_with_html = []
         line.each_with_index do |e, i|
-          line_with_html << if i == 0
+          line_with_html << if i.zero?
                               "<td class='description'>#{e}</td>"
                             else
                               one_single_datapoint_to_html(e)

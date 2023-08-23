@@ -3,14 +3,14 @@ API docs | no
 Good docs (clear page titles, easy to use) | no
 Basic demo app that just sends events | no
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
 Automated demo building | yes
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -26,48 +26,48 @@ Custom EventStore | no
 Provide stop retry for HTTP error codes | no
 Custom threadpool size | 
 Request callback (event sending callback) | 
-Server anonymisation option | 
+Server anonymisation option | y
 Cookie jar | 
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
 Configurable AppID | yes
 Configurable logger | yes
-Anonymous tracking | no
+Anonymous tracking | y
 Autotracking session entity | yes
 Autotracking application entity | yes
 Autotracking platform entity | yes
 Autotracking screenView event | yes
 Autotracking screen entity | yes
 Autotracking lifecycle events | yes
-Autotracking exception events | no
+Autotracking exception events | y
 GDPR entity configuration | yes
 Global contexts | yes
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n/a
+Autotracking geolocation entity | y
+Autotracking deeplink entity | y
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+onSessionUpdate callback | n
+Foreground/background callbacks | n
 
 # SUBJECT CONFIGURATION
-Tracker Subject - adds to all events | yes
-Event Subject - for that event only | n/a
+Tracker Subject - adds to all events | y
+Event Subject - for that event only | n
 Set user-agent | yes
 Set custom userID | yes
 Set timezone | yes
 Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | n
+Set domain sessionIndex | n
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no
@@ -83,7 +83,7 @@ True_timestamp available | yes
 Sent_timestamp available | yes
 Track returns event_id | no
 Automatically track general atomic fields | yes
-Tracker pausable | yes
+Tracker pausable | n
 Emitter pausable | no
 Flush events command | yes
 Flush at regular time intervals | no
@@ -93,13 +93,13 @@ Timestamp on session | no
 Asynchronous event sending | yes
 Retry with exponential back-off | yes
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | n/a
+Events are different functions | n/a
+Session pausable | n
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -141,19 +141,19 @@ SessionContext | yes
 ScreenContext | yes
 gdpr/consent entity | yes
 DeepLinkContext | no
-WebPageContext | no
-PerformanceTiming entity | no
-gaCookies entity | no
-ClientHints entity | no
-Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebPageContext | n/a
+PerformanceTiming entity | n/a
+gaCookies entity | n/a
+ClientHints entity | n/a
+Optimisely entity | n/a
+WebVitals | n/a
+PrivacySandbox entity | n/a
+PerformanceNavigationTiming entity | n/a
 
 # DETAILS
 Client/Server | client
-Version | 1.2.0
+Version | 1.4.0
 Status | Actively Maintained
 Repository | https://github.com/snowplow-incubator/snowplow-react-native-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/react-native-tracker/
-Supported platforms | RN 0.65+, Android tracker v3, iOS tracker v3, Android, AndroidTV, iOS, tvOS
+Supported platforms | RN 0.65+, Android tracker v4.1, iOS tracker v4.1, Android, AndroidTV, iOS, tvOS

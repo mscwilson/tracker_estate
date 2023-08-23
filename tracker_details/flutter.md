@@ -3,20 +3,20 @@ API docs | no
 Good docs (clear page titles, easy to use) | no
 Basic demo app that just sends events | no
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | no
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
-Custom POST path | no
+Custom POST path | y
 Custom connection timeout | no
-Custom request headers | no
+Custom request headers | y
 Custom NetworkConnection/HttpClient | no
 Custom max payload size (to deprecate?!) | no
 Custom batch size | no
@@ -24,16 +24,16 @@ EventStore has maximum limit | no
 Events are buffered in memory or db | yes
 Custom EventStore | no
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | n
+Request callback (event sending callback) | n
+Server anonymisation option | y
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
 Configurable AppID | yes
 Configurable logger | yes
-Anonymous tracking | no
+Anonymous tracking | y
 Autotracking session entity | yes
 Autotracking application entity | yes
 Autotracking platform entity | yes
@@ -44,30 +44,30 @@ Autotracking exception events | no
 GDPR entity configuration | no
 Global contexts | no
 Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking geolocation entity | y
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
 Foreground/background timeout | yes
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+onSessionUpdate callback | n
+Foreground/background callbacks | n
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
-Event Subject - for that event only | n/a
-Set user-agent | no
-Set custom userID | no
-Set timezone | no
-Set language | no
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Event Subject - for that event only | no
+Set user-agent | y
+Set custom userID | y
+Set timezone | y
+Set language | y
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | n
+Set domain sessionIndex | n
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no
@@ -95,11 +95,11 @@ Retry with exponential back-off | yes
 Plug-in architecture | no
 Events are different classes | 
 Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Session pausable | n
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -133,7 +133,7 @@ WebVitals event | no
 
 # OUT-OF-THE-BOX ENTITIES
 DesktopContext | n/a
-MobileContext / platformContext | yes
+MobileContext / platformContext | yes | for mobile
 DeviceContext | no
 ApplicationContext | yes
 GeoLocationContext | yes
@@ -141,19 +141,19 @@ SessionContext | yes
 ScreenContext | yes
 gdpr/consent entity | yes
 DeepLinkContext | no
-WebPageContext | no
+WebPageContext | y | for web
 PerformanceTiming entity | no
 gaCookies entity | no
 ClientHints entity | no
 Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebVitals | n
+PrivacySandbox entity | n
+PerformanceNavigationTiming entity | n
 
 # DETAILS
 Client/Server | client
-Version | 0.1.0
+Version | 0.4.0
 Status | Early Release
 Repository | https://github.com/snowplow-incubator/snowplow-flutter-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/flutter-tracker
-Supported platforms | JS tracker v3.2, iOS tracker v3, Android tracker v3
+Supported platforms | JS tracker v3.5, iOS tracker v5, Android tracker v5

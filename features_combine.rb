@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 features_file = 'tracker_properties/features.md'
 
 trackers = %w[android ios js node java]
@@ -40,14 +42,13 @@ table = all_the_lists.transpose
 html_table = []
 
 table.each_with_index do |line, i|
-  if i == 0
-    line_with_html = []
+  line_with_html = []
+  if i.zero?
     line.each do |e|
       line_with_html << "<th>#{e}</th>"
     end
     html_table << "<table><thead><tr>#{line_with_html.join}</tr></thead><tbody>"
   else
-    line_with_html = []
     line.each do |e|
       line_with_html << "<td>#{e}</td>"
     end
@@ -55,7 +56,7 @@ table.each_with_index do |line, i|
   end
 end
 
-html_table_string = html_table.flatten.join + '</tbody></table>'
+html_table_string = "#{html_table.flatten.join}</tbody></table>"
 
 output = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />' \
           '<meta name="viewport" content="width=device-width, initial-scale=1.0" />' \
