@@ -1,6 +1,6 @@
 # DEV GUIDES
-API docs | yes
-Good docs (clear page titles, easy to use) | no
+API docs | yes 
+Good docs (clear page titles, easy to use) | no 
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | no
 

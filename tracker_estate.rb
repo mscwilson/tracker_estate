@@ -79,13 +79,17 @@ class TrackerEstate
           next if line[0] == nil || line[0].include?("#") 
 
           if feature == line[0].strip
-            tracker_hash[tracker] << line[1].strip
+            if line.length == 3
+              tracker_hash[tracker] << [line[1].strip, line[2].strip]
+            else
+              tracker_hash[tracker] << [line[1].strip, ""]
+            end
             feature_is_present = true
           end
         end
 
         if !feature_is_present
-          tracker_hash[tracker] << ""
+          tracker_hash[tracker] << ["",""]
         end
       end
     end
@@ -136,19 +140,33 @@ class TrackerEstate
     html_table
   end
 
-  def one_single_datapoint_to_html(datapoint)
+  def one_single_datapoint_to_html(entry)
+    datapoint = entry[0]
+
     if datapoint.start_with? "https://github"
-      "<td class='option'><a href=#{datapoint}>Github</a></td>"
+      return "<td class='option'><a href=#{datapoint}>Github</a></td>"
     elsif datapoint.start_with? "https://docs.snowplow"
-      "<td class='option'><a href=#{datapoint}>Docs</a></td>"
-    elsif datapoint == "Actively Maintained"
-      "<td class='status am' option'>#{datapoint}</td>"
-    elsif datapoint == "Maintained"
-      "<td class='status m' option'>#{datapoint}</td>"
-    elsif datapoint == "Early Release"
-      "<td class='status er' option'>#{datapoint}</td>"
+      return "<td class='option'><a href=#{datapoint}>Docs</a></td>"
+    end
+
+    classes = ["option"]
+    case datapoint
+    when "Actively Maintained"
+      classes << "status am"
+    when "Maintained"
+      classes << "status am"
+    when "Early Release"
+      classes << "status er"
+    when "yes, but..."
+      classes << "but"
     else
-      "<td class='#{datapoint.gsub("/", "")} option'>#{datapoint}</td>"
+      classes << datapoint.gsub("/", "")
+    end
+
+    if entry[1] == ""
+      return "<td class='#{classes.join(" ")}'>#{datapoint}</td>"
+    else
+      return "<td class='#{classes.join(" ")} tooltip'>#{datapoint}<span class='tooltiptext'>#{entry[1]}</span></td>"
     end
   end
 

@@ -2,7 +2,7 @@
 API docs | yes
 Good docs (clear page titles, easy to use) | yes
 Basic demo app that just sends events | yes
-Instrumentation apps ("realistic") | yes
+Instrumentation apps ("realistic") | no
 Release notes on Github | yes
 
 # TESTS AND CI
@@ -37,7 +37,7 @@ Anonymous tracking | yes
 Autotracking session entity | yes
 Autotracking application entity | yes
 Autotracking platform entity | yes
-Autotracking screenView event | yes, but...
+Autotracking screenView event | yes, but... | doesn't work with modern Compose apps
 Autotracking screen entity | yes
 Autotracking lifecycle events | yes
 Autotracking exception events | yes
