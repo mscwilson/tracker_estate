@@ -79,10 +79,14 @@ class TrackerEstate
           next if line[0] == nil || line[0].include?("#") 
 
           if feature == line[0].strip
+            option = line[1].strip
+            option = "yes" if option == "y"
+            option = "no" if option == "n"
+
             if line.length == 3
-              tracker_hash[tracker] << [line[1].strip, line[2].strip]
+              tracker_hash[tracker] << [option, line[2].strip]
             else
-              tracker_hash[tracker] << [line[1].strip, ""]
+              tracker_hash[tracker] << [option, ""]
             end
             feature_is_present = true
           end

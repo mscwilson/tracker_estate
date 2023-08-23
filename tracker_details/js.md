@@ -3,13 +3,14 @@ API docs | yes
 Good docs (clear page titles, easy to use) | no 
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | no
+Release notes on Github | no
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
 Automated demo building | n/a
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
