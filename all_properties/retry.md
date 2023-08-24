@@ -1,0 +1,2 @@
+RETRY
+Event sending retry

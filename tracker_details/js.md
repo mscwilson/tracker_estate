@@ -1,7 +1,7 @@
 # DEV GUIDES
 API docs | yes 
-Good docs (clear page titles, easy to use) | no | they're terrible
-Basic demo app that just sends events | yes
+Good documentation | no | they're terrible
+Basic demo app | yes
 Instrumentation apps ("realistic") | no
 Release notes on Github | no
 
@@ -76,7 +76,7 @@ Drop events callback | n
 
 
 # FEATURES
-Snowplow API (tracker internals hidden inside Snowplow class) | no | the tracker internals are hidden though
+Snowplow API | no | the tracker internals are hidden though
 Remote configuration | no
 Multiple tracker instances | yes
 Track an event on multiple trackers at once | yes

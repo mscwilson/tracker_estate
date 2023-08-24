@@ -62,10 +62,12 @@ class TrackerEstate
     @events_file = 'all_properties/events.md'
     @entities_file = 'all_properties/entities.md'
     @general_file = 'all_properties/general.md'
+    @retry_file = 'all_properties/retry.md'
   end
 
   def make_a_single_table(features_filename)
     features_list = File.read(features_filename).split("\n")
+    features_list.map! { |line| line.split('|') }
 
     tracker_hash = Hash.new { |hash, key| hash[key] = [] }
 
@@ -74,13 +76,14 @@ class TrackerEstate
       file.map! { |line| line.split('|') }
 
       features_list.each_with_index do |feature, i|
+        # skips the title line for each properties file
         next if i.zero?
 
         feature_is_present = false
         file.each do |line|
           next if line[0].nil? || line[0].include?('#')
 
-          next unless feature == line[0].strip
+          next unless feature[0].strip == line[0].strip
 
           option = line[1].strip
           option = 'yes' if %w[y Y Yes YES].include?(option)
@@ -128,14 +131,18 @@ class TrackerEstate
     table.each_with_index do |line, i|
       line_with_html = []
       if i.zero?
-        line.each do |e|
-          line_with_html << "<th>#{e}</th>"
+        line.each_with_index do |e, i|
+          line_with_html << if i.zero?
+                              "<th>#{e[0]}</th>"
+                            else
+                              "<th>#{e}</th>"
+                            end
         end
         html_table << "<table><thead><tr>#{line_with_html.join}</tr></thead><tbody>"
       else
         line.each_with_index do |e, i|
           line_with_html << if i.zero?
-                              "<td class='description'>#{e}</td>"
+                              property_to_html(e)
                             else
                               one_single_datapoint_to_html(e)
                             end
@@ -144,6 +151,14 @@ class TrackerEstate
       end
     end
     html_table
+  end
+
+  def property_to_html(property)
+    if property.length == 1
+      "<td class='description'>#{property[0]}</td>"
+    else
+      "<td class='description tooltip'>#{property[0]} *<span class='tooltiptext'>#{property[1]}</span></td>"
+    end
   end
 
   def one_single_datapoint_to_html(entry)
@@ -192,6 +207,7 @@ class TrackerEstate
         "#{make_a_single_table(@callbacks_file)}<br/>" \
         "#{make_a_single_table(@events_file)}<br/>" \
         "#{make_a_single_table(@entities_file)}<br/>" \
+        "#{make_a_single_table(@retry_file)}<br/>" \
         "</body></html>\n"
 
     File.open('snowplow_tracker_estate.html', 'w') { |f| f.write(output) }
@@ -229,10 +245,12 @@ class TrackerEstate
       File.open("tracker_details/#{tracker}.md", 'w') { |f| f.write(new_file.join("\n")) }
     end
   end
+  
 end
 
 estate = TrackerEstate.new
-# estate.output_html_file
+# estate.change_property_title('Snowplow API', 'Snowplow API')
 
-estate.change_property_title('DeviceContext', 'test')
+estate.output_html_file
+
 # estate.add_new_property_to_trackers("onSessionUpdate callback", "Foreground/background callbacks | ")

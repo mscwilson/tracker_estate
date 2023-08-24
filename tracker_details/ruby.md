@@ -74,7 +74,7 @@ Sending failure callback |
 Drop events callback | 
 
 # FEATURES
-Snowplow API (tracker internals hidden inside Snowplow class) | no
+Snowplow API | no
 Remote configuration | no
 Multiple tracker instances | 
 Track an event on multiple trackers at once | 
