@@ -1,16 +1,16 @@
 # DEV GUIDES
 API docs | yes
-Good docs (clear page titles, easy to use) | yes
+Good docs (clear page titles, easy to use) | no
 Basic demo app that just sends events | yes
 Instrumentation apps ("realistic") | yes
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
 Automated demo building | yes
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -24,10 +24,10 @@ EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
 Custom EventStore | yes
 Provide stop retry for HTTP error codes | yes
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | y
+Request callback (event sending callback) | n
+Server anonymisation option | n
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
@@ -49,9 +49,9 @@ Autotracking deeplink entity |
 Choose which platform entity properties to track | 
 
 # SESSION CONFIGURATION
-Foreground/background timeout | no
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+Foreground/background timeout | n/a
+onSessionUpdate callback | n
+Foreground/background callbacks | n/a
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -60,14 +60,14 @@ Set user-agent | yes
 Set custom userID | yes
 Set timezone | yes
 Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | y
+Set domain sessionIndex | y
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | yes
@@ -86,20 +86,20 @@ Automatically track general atomic fields | yes
 Tracker pausable | no
 Emitter pausable | no
 Flush events command | yes
-Flush at regular time intervals | yes
-Start new session command | n/a
+Flush at regular time intervals | no
+Start new session command | n
 Event index counter for session | n/a
 Timestamp on session | n/a
 Asynchronous event sending | yes
 Retry with exponential back-off | yes
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | yes
+Events are different functions | deprecated
+Session pausable | n
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -107,17 +107,17 @@ Unstructured event | no
 Structured event | yes
 Page view event | yes
 Mobile screen view event | yes
-Snowplow screen view event | yes
-eCommerce events (old) | yes
+Snowplow screen view event | n
+eCommerce events (old) | n
 Timing event | no
 Page ping event | yes
-Link click event | yes
-Form change event | yes
-Form submit event | yes
+Link click event | n
+Form change event | n
+Form submit event | n
 Form focus event | no
-Site search event | yes
-Add to cart event (old) | yes
-Remove from cart event (old) | yes
+Site search event | n
+Add to cart event (old) | n
+Remove from cart event (old) | n
 Error/exception event | no
 App lifecycle event | n/a
 Installation event | n/a
@@ -146,13 +146,13 @@ PerformanceTiming entity | no
 gaCookies entity | no
 ClientHints entity | no
 Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebVitals | n
+PrivacySandbox entity | n
+PerformanceNavigationTiming entity | n
 
 # DETAILS
 Client/Server | client+server
-Version | 1.0.0
+Version | 1.0.1
 Status | Maintained
 Repository | https://github.com/snowplow/snowplow-python-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/python-tracker/

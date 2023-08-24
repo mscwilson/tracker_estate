@@ -105,10 +105,10 @@ Ecommerce tracking | Y
 Self-describing event | yes
 Unstructured event | no
 Structured event | yes
-Page view event | yes
+Page view event | yes | labelled in the API docs as deprecated, but it isn't actually
 Mobile screen view event | yes
 Snowplow screen view event | no
-eCommerce events (old) | yes
+eCommerce events (old) | deprecated
 Timing event | yes
 Page ping event | no
 Link click event | no
@@ -129,7 +129,7 @@ Social media event | no
 Ad impression event | no
 Ad click event | no
 Ad conversion event | no
-WebVitals event | no
+WebVitals event | n/a
 
 # OUT-OF-THE-BOX ENTITIES
 DesktopContext | n/a

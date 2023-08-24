@@ -49,7 +49,7 @@ Autotracking deeplink entity |
 Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Foreground/background timeout | yes
+Foreground/background timeout | n/a
 onSessionUpdate callback | no 
 Foreground/background callbacks | n/a
 

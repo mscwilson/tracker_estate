@@ -23,7 +23,7 @@ Custom batch size | yes
 EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
 Custom EventStore | n/a
-Provide stop retry for HTTP error codes | no
+Provide stop retry for HTTP error codes | yes
 Custom threadpool size | n/a
 Request callback (event sending callback) | no
 Server anonymisation option | y
@@ -50,7 +50,7 @@ Choose which platform entity properties to track | n
 
 
 # SESSION CONFIGURATION
-Foreground/background timeout | yes
+Foreground/background timeout | n/a
 onSessionUpdate callback | y
 Foreground/background callbacks | n/a
 
@@ -93,7 +93,7 @@ Start new session command | yes
 Event index counter for session | yes
 Timestamp on session | yes
 Asynchronous event sending | yes
-Retry with exponential back-off | no
+Retry with exponential back-off | no | there's a retry built into the got library
 Plug-in architecture | yes
 Events are different classes | n
 Events are different functions | y

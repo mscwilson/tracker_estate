@@ -129,7 +129,7 @@ Social media event | no
 Ad impression event | no
 Ad click event | no
 Ad conversion event | no
-WebVitals event | no
+WebVitals event | n/a
 
 # OUT-OF-THE-BOX ENTITIES
 DesktopContext | n/a
