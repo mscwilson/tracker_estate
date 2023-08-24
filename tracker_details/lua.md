@@ -91,7 +91,7 @@ Start new session command | n/a
 Event index counter for session | n/a
 Timestamp on session | n/a
 Asynchronous event sending | no
-Retry with exponential back-off | no
+Event sending retry | n
 Plug-in architecture | no
 Events are different classes | 
 Events are different functions | 

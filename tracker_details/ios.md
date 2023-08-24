@@ -91,7 +91,7 @@ Start new session command | yes
 Event index counter for session | yes
 Timestamp on session | yes
 Asynchronous event sending | yes
-Retry with exponential back-off | yes
+Event sending retry | yes
 Plug-in architecture | y
 Events are different classes | y
 Events are different functions | n

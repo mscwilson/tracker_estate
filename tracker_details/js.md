@@ -93,7 +93,7 @@ Start new session command | yes
 Event index counter for session | yes
 Timestamp on session | yes
 Asynchronous event sending | yes
-Retry with exponential back-off | no | there's a retry built into the got library
+Event sending retry | no | retry included in Got request library
 Plug-in architecture | yes
 Events are different classes | n
 Events are different functions | y

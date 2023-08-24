@@ -106,9 +106,7 @@ class TrackerEstate
     "#{html_table.flatten.join}</tbody></table>"
   end
 
-  def read_tracker_details(tracker)
-    
-  end
+  def read_tracker_details(tracker); end
 
   def add_tracker_name_to_start(dict)
     dict.each do |k, v|
@@ -213,9 +211,28 @@ class TrackerEstate
       File.open("tracker_details/#{tracker}.md", 'w') { |f| f.write(file.join("\n")) }
     end
   end
+
+  def change_property_title(old_title, new_title)
+    @trackers.each do |tracker|
+      file = File.read("tracker_details/#{tracker}.md").split("\n")
+      new_file = []
+
+      file.each do |line|
+        sections = line.split('|')
+        new_file << if line.start_with? old_title
+                      "#{new_title} |#{sections[1..].join('|')}"
+                    else
+                      sections.join('|')
+                    end
+      end
+
+      File.open("tracker_details/#{tracker}.md", 'w') { |f| f.write(new_file.join("\n")) }
+    end
+  end
 end
 
 estate = TrackerEstate.new
-estate.output_html_file
+# estate.output_html_file
 
+estate.change_property_title('DeviceContext', 'test')
 # estate.add_new_property_to_trackers("onSessionUpdate callback", "Foreground/background callbacks | ")
