@@ -1,7 +1,7 @@
 # DEV GUIDES
 API docs | no
-Good docs (clear page titles, easy to use) | no
-Basic demo app that just sends events | no
+Good documentation | no
+Basic demo app | no
 Instrumentation apps ("realistic") | no
 Release notes on Github | y
 
@@ -49,6 +49,7 @@ Autotracking deeplink entity | n
 Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
+Has session | y
 Foreground/background timeout | yes
 onSessionUpdate callback | n
 Foreground/background callbacks | n

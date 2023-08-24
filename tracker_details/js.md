@@ -50,6 +50,7 @@ Choose which platform entity properties to track | n
 
 
 # SESSION CONFIGURATION
+Has session | y
 Foreground/background timeout | n/a
 onSessionUpdate callback | y
 Foreground/background callbacks | n/a

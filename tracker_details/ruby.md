@@ -1,16 +1,16 @@
 # DEV GUIDES
 API docs | yes
-Good docs (clear page titles, easy to use) | no
-Basic demo app that just sends events | no
-Instrumentation apps ("realistic") | yes
-Release notes on Github | 
+Good documentation | no | but not terrible
+Basic demo app | no
+Instrumentation apps ("realistic") | yes | very simple Rails app
+Release notes on Github | n
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | no
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | no
@@ -49,6 +49,7 @@ Autotracking deeplink entity |
 Choose which platform entity properties to track | 
 
 # SESSION CONFIGURATION
+Has session | 
 Foreground/background timeout | no
 onSessionUpdate callback | 
 Foreground/background callbacks | 

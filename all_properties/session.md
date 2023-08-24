@@ -1,4 +1,5 @@
 SESSION
+Has session
 Start new session command
 Event index counter for session
 Timestamp on session

@@ -1,7 +1,7 @@
 # DEV GUIDES
 API docs | yes
-Good docs (clear page titles, easy to use) | no
-Basic demo app that just sends events | yes
+Good documentation | no
+Basic demo app | yes
 Instrumentation apps ("realistic") | yes
 Release notes on Github | y
 
@@ -49,6 +49,7 @@ Autotracking deeplink entity |
 Choose which platform entity properties to track | 
 
 # SESSION CONFIGURATION
+Has session | n
 Foreground/background timeout | n/a
 onSessionUpdate callback | n
 Foreground/background callbacks | n/a
@@ -87,7 +88,7 @@ Tracker pausable | no
 Emitter pausable | no
 Flush events command | yes
 Flush at regular time intervals | no
-Start new session command | n
+Start new session command | n/a
 Event index counter for session | n/a
 Timestamp on session | n/a
 Asynchronous event sending | yes
@@ -95,7 +96,7 @@ Event sending retry | y
 Plug-in architecture | no
 Events are different classes | yes
 Events are different functions | deprecated
-Session pausable | n
+Session pausable | n/a
 Media tracking | n
 Youtube tracking | n
 Vimeo tracking | n

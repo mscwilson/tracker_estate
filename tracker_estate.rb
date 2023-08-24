@@ -249,8 +249,8 @@ class TrackerEstate
 end
 
 estate = TrackerEstate.new
-# estate.change_property_title('Snowplow API', 'Snowplow API')
+# estate.change_property_title('Basic demo app', 'Basic demo app')
 
 estate.output_html_file
 
-# estate.add_new_property_to_trackers("onSessionUpdate callback", "Foreground/background callbacks | ")
+# estate.add_new_property_to_trackers("SESSION", "Has session | ")
