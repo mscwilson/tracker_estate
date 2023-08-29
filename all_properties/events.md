@@ -3,8 +3,8 @@ Self-describing event
 Unstructured event
 Structured event
 Page view event
-Mobile screen view event
-Snowplow screen view event
+Mobile screen view event | com.snowplowanalytics.mobile/screen_view/etc
+Snowplow screen view event | com.snowplowanalytics.snowplow/screen_view/etc
 eCommerce events (old)
 Timing event
 Page ping event

@@ -1,6 +1,6 @@
 # DEV GUIDES
 API docs | yes
-Good documentation | no | but not terrible
+Good documentation | no | but not awful
 Basic demo app | no
 Instrumentation apps ("realistic") | yes | very simple Rails app
 Release notes on Github | n
@@ -14,20 +14,20 @@ Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | no
-Custom POST path | 
-Custom connection timeout | 
-Custom request headers | 
-Custom NetworkConnection/HttpClient | 
+Custom POST path | y
+Custom connection timeout | n
+Custom request headers | n
+Custom NetworkConnection/HttpClient | n
 Custom max payload size (to deprecate?!) | no
 Custom batch size | yes
 EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
-Custom EventStore | 
+Custom EventStore | n
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | y
+Request callback (event sending callback) | y 
+Server anonymisation option | n
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | no
@@ -43,42 +43,43 @@ Autotracking lifecycle events | no
 Autotracking exception events | 
 GDPR entity configuration | no
 Global contexts | no
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n
+Autotracking geolocation entity | n
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Has session | 
-Foreground/background timeout | no
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+Has session | n
+Foreground/background timeout | n/a
+onSessionUpdate callback | n/a
+Foreground/background callbacks | n/a
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
 Event Subject - for that event only | yes
 Set user-agent | yes
 Set custom userID | yes
-Set timezone | 
-Set language | 
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
+Set timezone | y
+Set language | y
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | y
+Set domain sessionIndex | y
+Set user fingerprint | y
 
 # EVENT LOSS CALLBACKS
-Sending failure callback | 
-Drop events callback | 
+Sending failure callback | n
+Drop events callback | n
 
 # FEATURES
 Snowplow API | no
 Remote configuration | no
-Multiple tracker instances | 
-Track an event on multiple trackers at once | 
+Multiple tracker instances | n | we recommend implementing as a Singleton
+Track an event on multiple trackers at once | n
 Event_id and timestamp not overridable | no
 True_timestamp available | no
 Sent_timestamp available | yes
@@ -87,24 +88,24 @@ Automatically track general atomic fields | yes
 Tracker pausable | no
 Emitter pausable | no
 Flush events command | yes
-Flush at regular time intervals | 
+Flush at regular time intervals | n
 Start new session command | n/a
 Event index counter for session | n/a
 Timestamp on session | n/a
 Asynchronous event sending | yes
 Event sending retry | n
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | n
+Events are different functions | y
+Session pausable | n/a
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
-Unstructured event | yes
+Unstructured event | deprecated
 Structured event | yes
 Page view event | yes
 Mobile screen view event | no

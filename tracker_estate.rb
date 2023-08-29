@@ -207,6 +207,7 @@ class TrackerEstate
         "#{make_a_single_table(@callbacks_file)}<br/>" \
         "#{make_a_single_table(@events_file)}<br/>" \
         "#{make_a_single_table(@entities_file)}<br/>" \
+        "<br/>This one is on the roadmap:<br/>" \
         "#{make_a_single_table(@retry_file)}<br/>" \
         "</body></html>\n"
 
@@ -253,4 +254,4 @@ estate = TrackerEstate.new
 
 estate.output_html_file
 
-# estate.add_new_property_to_trackers("SESSION", "Has session | ")
+# estate.add_new_property_to_trackers("Set domain sessionIndex", "Set user fingerprint | ")

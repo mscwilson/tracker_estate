@@ -69,6 +69,7 @@ Set screen viewport | yes
 Set colour depth | yes
 Set domain sessionId | no
 Set domain sessionIndex | no
+Set user fingerprint | 
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no

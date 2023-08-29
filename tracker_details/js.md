@@ -1,6 +1,6 @@
 # DEV GUIDES
 API docs | yes 
-Good documentation | no | they're terrible
+Good documentation | no | it's terrible
 Basic demo app | yes
 Instrumentation apps ("realistic") | no
 Release notes on Github | no
@@ -70,6 +70,7 @@ Set screen viewport |
 Set colour depth | 
 Set domain sessionId | 
 Set domain sessionIndex | 
+Set user fingerprint | 
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | n
