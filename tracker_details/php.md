@@ -3,31 +3,31 @@ API docs | no
 Good documentation | no
 Basic demo app | no
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | no
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | no
-Custom POST path | 
-Custom connection timeout | 
-Custom request headers | 
-Custom NetworkConnection/HttpClient | 
+Custom POST path | n
+Custom connection timeout | y
+Custom request headers | n
+Custom NetworkConnection/HttpClient | n
 Custom max payload size (to deprecate?!) | no
 Custom batch size | yes
 EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
-Custom EventStore | 
+Custom EventStore | n
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | n
+Request callback (event sending callback) | n
+Server anonymisation option | n
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | no
@@ -43,43 +43,43 @@ Autotracking lifecycle events | no
 Autotracking exception events | 
 GDPR entity configuration | no
 Global contexts | no
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n
+Autotracking geolocation entity | n
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Has session | 
-Foreground/background timeout | no
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+Has session | n
+Foreground/background timeout | n/a
+onSessionUpdate callback | n/a
+Foreground/background callbacks | n/a
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
 Event Subject - for that event only | no
 Set user-agent | yes
 Set custom userID | yes
-Set timezone | 
-Set language | 
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
-Set user fingerprint | 
+Set timezone | y
+Set language | y
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | y
+Set domain sessionIndex | y
+Set user fingerprint | n
 
 # EVENT LOSS CALLBACKS
-Sending failure callback | 
-Drop events callback | 
+Sending failure callback | n
+Drop events callback | n
 
 # FEATURES
 Snowplow API | no
 Remote configuration | no
-Multiple tracker instances | 
-Track an event on multiple trackers at once | 
+Multiple tracker instances | n
+Track an event on multiple trackers at once | n
 Event_id and timestamp not overridable | yes
 True_timestamp available | yes
 Sent_timestamp available | yes
@@ -88,20 +88,20 @@ Automatically track general atomic fields | yes
 Tracker pausable | no
 Emitter pausable | no
 Flush events command | yes
-Flush at regular time intervals | 
+Flush at regular time intervals | n
 Start new session command | n/a
 Event index counter for session | n/a
 Timestamp on session | n/a
 Asynchronous event sending | yes
-Event sending retry | n
+Event sending retry | y
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | n
+Events are different functions | y
+Session pausable | n/a
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | no
@@ -154,7 +154,7 @@ PerformanceNavigationTiming entity |
 
 # DETAILS
 Client/Server | server
-Version | 0.5.0
+Version | 0.7.0
 Status | Early Release
 Repository | https://github.com/snowplow/snowplow-php-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/php-tracker/
