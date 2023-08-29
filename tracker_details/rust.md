@@ -3,14 +3,14 @@ API docs | yes
 Good documentation | yes
 Basic demo app | no
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
 Automated demo building | no
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | n
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -24,10 +24,10 @@ EventStore has maximum limit | yes
 Events are buffered in memory or db | yes
 Custom EventStore | yes
 Provide stop retry for HTTP error codes | yes
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | n
+Request callback (event sending callback) | n
+Server anonymisation option | n
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
@@ -43,45 +43,45 @@ Autotracking lifecycle events | no
 Autotracking exception events | no
 GDPR entity configuration | no
 Global contexts | no
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n
+Autotracking geolocation entity | n
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Has session | 
-Foreground/background timeout | no
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+Has session | n
+Foreground/background timeout | n/a
+onSessionUpdate callback | n/a
+Foreground/background callbacks | n/a
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
 Event Subject - for that event only | yes
-Set user-agent | no
-Set custom userID | no
+Set user-agent | y
+Set custom userID | y
 Set timezone | yes
 Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
-Set user fingerprint | 
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | n
+Set screen viewport | n
+Set colour depth | n
+Set domain sessionId | n
+Set domain sessionIndex | n
+Set user fingerprint | n
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no
 Drop events callback | no
 
 # FEATURES
-Snowplow API | 
+Snowplow API | y
 Remote configuration | no
 Multiple tracker instances | yes
 Track an event on multiple trackers at once | no
 Event_id and timestamp not overridable | yes
-True_timestamp available | 
+True_timestamp available | n
 Sent_timestamp available | yes
 Track returns event_id | yes
 Automatically track general atomic fields | yes
@@ -89,19 +89,19 @@ Tracker pausable | no
 Emitter pausable | no
 Flush events command | yes
 Flush at regular time intervals | no
-Start new session command | no
-Event index counter for session | no
-Timestamp on session | no
+Start new session command | n/a
+Event index counter for session | n/a
+Timestamp on session | n/a
 Asynchronous event sending | yes
 Event sending retry | y
-Plug-in architecture | yes
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Plug-in architecture | n
+Events are different classes | y
+Events are different functions | n
+Session pausable | n/a
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -148,9 +148,9 @@ PerformanceTiming entity | no
 gaCookies entity | no
 ClientHints entity | no
 Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebVitals | n
+PrivacySandbox entity | n
+PerformanceNavigationTiming entity | n
 
 # DETAILS
 Client/Server | client+server
