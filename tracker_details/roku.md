@@ -3,14 +3,14 @@ API docs | no
 Good documentation | no
 Basic demo app | yes
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | n | missing v0.1.0
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
 Automated demo building | no
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -24,10 +24,10 @@ EventStore has maximum limit | no
 Events are buffered in memory or db | no
 Custom EventStore | no
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | n/a
+Request callback (event sending callback) | n
+Server anonymisation option | n
+Cookie jar | n
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
@@ -43,33 +43,33 @@ Autotracking lifecycle events | no
 Autotracking exception events | no
 GDPR entity configuration | no
 Global contexts | no
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n
+Autotracking geolocation entity | n
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Has session | 
+Has session | n
 Foreground/background timeout | no
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+onSessionUpdate callback | n
+Foreground/background callbacks | n
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
 Event Subject - for that event only | n/a
 Set user-agent | no
 Set custom userID | no
-Set timezone | yes
-Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
-Set user fingerprint | 
+Set timezone | n
+Set language | n
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | n
+Set screen resolution | n
+Set screen viewport | n
+Set colour depth | n
+Set domain sessionId | n
+Set domain sessionIndex | n
+Set user fingerprint | n
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | no
@@ -78,8 +78,8 @@ Drop events callback | no
 # FEATURES
 Snowplow API | yes
 Remote configuration | no
-Multiple tracker instances | no
-Track an event on multiple trackers at once | no
+Multiple tracker instances | y
+Track an event on multiple trackers at once | y
 Event_id and timestamp not overridable | yes
 True_timestamp available | no
 Sent_timestamp available | yes
@@ -95,13 +95,13 @@ Timestamp on session | no
 Asynchronous event sending | yes
 Event sending retry | y
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
+Events are different classes | n
+Events are different functions | y
+Session pausable | n/a
 Media tracking | yes
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -136,7 +136,7 @@ WebVitals event | no
 # OUT-OF-THE-BOX ENTITIES
 DesktopContext | no
 MobileContext / platformContext | no
-DeviceContext | yes
+DeviceContext | yes | a Roku-specific entity
 ApplicationContext | no
 GeoLocationContext | no
 SessionContext | no

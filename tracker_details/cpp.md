@@ -1,16 +1,16 @@
 # DEV GUIDES
 API docs | yes
-Good documentation | yes
+Good documentation | no 
 Basic demo app | no
 Instrumentation apps ("realistic") | yes
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | yes
 Automated demo building | yes
 Automated deploy to package manager | yes
-Automated deploy to Github | 
+Automated deploy to Github | y
 
 # EMITTER/NETWORK CONFIGURATION
 Implicit endpoint url (default POST and HTTPS) | yes
@@ -24,10 +24,10 @@ EventStore has maximum limit | no
 Events are buffered in memory or db | yes
 Custom EventStore | yes
 Provide stop retry for HTTP error codes | yes
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | n
+Request callback (event sending callback) | y
+Server anonymisation option | n
+Cookie jar | y
 
 # TRACKER CONFIGURATION
 Namespace mandatory | yes
@@ -43,16 +43,16 @@ Autotracking lifecycle events | no
 Autotracking exception events | no
 GDPR entity configuration | no
 Global contexts | no
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n
+Autotracking geolocation entity | n
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Has session | 
+Has session | y
 Foreground/background timeout | yes
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+onSessionUpdate callback | n
+Foreground/background callbacks | n
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
@@ -61,19 +61,19 @@ Set user-agent | yes
 Set custom userID | yes
 Set timezone | yes
 Set language | yes
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
-Set user fingerprint | 
+Set networkUserid | n
+Set domainUserid | n
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | n
+Set domain sessionIndex | n
+Set user fingerprint | n
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | yes
-Drop events callback | yes
+Drop events callback | no
 
 # FEATURES
 Snowplow API | yes
@@ -95,13 +95,13 @@ Timestamp on session | yes
 Asynchronous event sending | yes
 Event sending retry | y
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | y
+Events are different functions | n
+Session pausable | n
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
 Self-describing event | yes
@@ -154,7 +154,7 @@ PerformanceNavigationTiming entity |
 
 # DETAILS
 Client/Server | client
-Version | 1.0.0
+Version | 2.0.0
 Status | Maintained
 Repository | https://github.com/snowplow/snowplow-cpp-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/c-tracker/
