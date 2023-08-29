@@ -80,14 +80,14 @@ Snowplow API | no
 Remote configuration | no
 Multiple tracker instances | n
 Track an event on multiple trackers at once | n
-Event_id and timestamp not overridable | n | the docs even explain how to do this
+Event_id and timestamp not overridable | n | thorough instructions in the docs even
 True_timestamp available | y
 Sent_timestamp available | yes
 Track returns event_id | no
 Automatically track general atomic fields | yes
 Tracker pausable | n
 Emitter pausable | n
-Flush events command | 
+Flush events command | y
 Flush at regular time intervals | n
 Start new session command | n/a
 Event index counter for session | no
@@ -154,7 +154,7 @@ PerformanceNavigationTiming entity |
 
 # DETAILS
 Client/Server | client+server
-Version | 2.4.1
+Version | 3.0.0
 Status | Actively Maintained
 Repository | https://github.com/snowplow/snowplow-golang-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/golang-tracker/

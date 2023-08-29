@@ -62,7 +62,7 @@ class TrackerEstate
     @events_file = 'all_properties/events.md'
     @entities_file = 'all_properties/entities.md'
     @general_file = 'all_properties/general.md'
-    @retry_file = 'all_properties/retry.md'
+    @important_file = 'all_properties/important.md'
   end
 
   def make_a_single_table(features_filename)
@@ -207,8 +207,8 @@ class TrackerEstate
         "#{make_a_single_table(@callbacks_file)}<br/>" \
         "#{make_a_single_table(@events_file)}<br/>" \
         "#{make_a_single_table(@entities_file)}<br/>" \
-        "<br/>This one is on the roadmap:<br/>" \
-        "#{make_a_single_table(@retry_file)}<br/>" \
+        "<br/>On the roadmap, or should be:<br/>" \
+        "#{make_a_single_table(@important_file)}<br/>" \
         "</body></html>\n"
 
     File.open('snowplow_tracker_estate.html', 'w') { |f| f.write(output) }

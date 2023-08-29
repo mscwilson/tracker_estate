@@ -1,2 +1,0 @@
-RETRY
-Event sending retry

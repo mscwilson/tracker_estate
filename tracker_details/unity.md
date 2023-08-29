@@ -3,113 +3,113 @@ API docs | no
 Good documentation | no
 Basic demo app | yes
 Instrumentation apps ("realistic") | no
-Release notes on Github | 
+Release notes on Github | y
 
 # TESTS AND CI
 Automated unit tests | yes
 Integration/validation tests | no
 Automated demo building | 
-Automated deploy to package manager | 
-Automated deploy to Github | 
+Automated deploy to package manager | y
+Automated deploy to Github | n
 
 # EMITTER/NETWORK CONFIGURATION
-Implicit endpoint url (default POST and HTTPS) | 
-Custom POST path | 
-Custom connection timeout | 
-Custom request headers | 
-Custom NetworkConnection/HttpClient | 
+Implicit endpoint url (default POST and HTTPS) | y
+Custom POST path | n
+Custom connection timeout | n
+Custom request headers | n
+Custom NetworkConnection/HttpClient | n
 Custom max payload size (to deprecate?!) | yes
-Custom batch size | 
-EventStore has maximum limit | 
+Custom batch size | y
+EventStore has maximum limit | n
 Events are buffered in memory or db | yes
-Custom EventStore | 
+Custom EventStore | n
 Provide stop retry for HTTP error codes | no
-Custom threadpool size | 
-Request callback (event sending callback) | 
-Server anonymisation option | 
-Cookie jar | 
+Custom threadpool size | n
+Request callback (event sending callback) | n
+Server anonymisation option | n
+Cookie jar | n
 
 # TRACKER CONFIGURATION
-Namespace mandatory | 
+Namespace mandatory | n
 Configurable AppID | yes
 Configurable logger | yes
 Anonymous tracking | no
-Autotracking session entity | 
-Autotracking application entity | 
+Autotracking session entity | y | probably?
+Autotracking application entity | n
 Autotracking platform entity | yes
-Autotracking screenView event | 
+Autotracking screenView event | n
 Autotracking screen entity | no
 Autotracking lifecycle events | no
-Autotracking exception events | 
-GDPR entity configuration | 
+Autotracking exception events | n
+GDPR entity configuration | n
 Global contexts | no
-Autotracking page entity | 
-Autotracking geolocation entity | 
-Autotracking deeplink entity | 
-Choose which platform entity properties to track | 
+Autotracking page entity | n
+Autotracking geolocation entity | n
+Autotracking deeplink entity | n
+Choose which platform entity properties to track | n
 
 # SESSION CONFIGURATION
-Has session | 
-Foreground/background timeout | 
-onSessionUpdate callback | 
-Foreground/background callbacks | 
+Has session | y
+Foreground/background timeout | y
+onSessionUpdate callback | n
+Foreground/background callbacks | n
 
 # SUBJECT CONFIGURATION
 Tracker Subject - adds to all events | yes
-Event Subject - for that event only | n/a
-Set user-agent | 
-Set custom userID | 
-Set timezone | 
-Set language | 
-Set networkUserid | 
-Set domainUserid | 
-Set ipAddress | 
-Set screen resolution | 
-Set screen viewport | 
-Set colour depth | 
-Set domain sessionId | 
-Set domain sessionIndex | 
-Set user fingerprint | 
+Event Subject - for that event only | n
+Set user-agent | y
+Set custom userID | y
+Set timezone | y
+Set language | y
+Set networkUserid | y
+Set domainUserid | y
+Set ipAddress | y
+Set screen resolution | y
+Set screen viewport | y
+Set colour depth | y
+Set domain sessionId | n
+Set domain sessionIndex | n
+Set user fingerprint | n
 
 # EVENT LOSS CALLBACKS
-Sending failure callback | 
-Drop events callback | 
+Sending failure callback | n
+Drop events callback | n
 
 # FEATURES
 Snowplow API | no
 Remote configuration | no
-Multiple tracker instances | 
-Track an event on multiple trackers at once | 
-Event_id and timestamp not overridable | 
-True_timestamp available | 
+Multiple tracker instances | n
+Track an event on multiple trackers at once | n
+Event_id and timestamp not overridable | n
+True_timestamp available | n
 Sent_timestamp available | yes
 Track returns event_id | no
 Automatically track general atomic fields | yes
-Tracker pausable | 
-Emitter pausable | 
-Flush events command | 
-Flush at regular time intervals | 
-Start new session command | 
+Tracker pausable | y
+Emitter pausable | n
+Flush events command | n
+Flush at regular time intervals | n
+Start new session command | n
 Event index counter for session | no
 Timestamp on session | no
 Asynchronous event sending | yes
-Event sending retry | y
+Event sending retry | n
 Plug-in architecture | no
-Events are different classes | 
-Events are different functions | 
-Session pausable | 
-Media tracking | 
-Youtube tracking | 
-Vimeo tracking | 
-Ecommerce tracking | 
+Events are different classes | y
+Events are different functions | n
+Session pausable | n
+Media tracking | n
+Youtube tracking | n
+Vimeo tracking | n
+Ecommerce tracking | n
 
 # OUT-OF-THE-BOX EVENTS
-Self-describing event | no
-Unstructured event | yes
+Self-describing event | yes
+Unstructured event | no
 Structured event | yes
 Page view event | yes
-Mobile screen view event | no
-Snowplow screen view event | yes
+Mobile screen view event | y
+Snowplow screen view event | deprecated
 eCommerce events (old) | yes
 Timing event | yes
 Page ping event | no
@@ -148,15 +148,15 @@ PerformanceTiming entity | no
 gaCookies entity | no
 ClientHints entity | no
 Optimisely entity | no
-WebVitals | 
-PrivacySandbox entity | 
-PerformanceNavigationTiming entity | 
+WebVitals | n
+PrivacySandbox entity | n
+PerformanceNavigationTiming entity | n
 
 # DETAILS
 Client/Server | client
-Version | 0.7.0
+Version | 0.8.0
 Status | Early Release
 Repository | https://github.com/snowplow/snowplow-unity-tracker
 Documentation | https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/unity-tracker/
-Supported platforms | "Unity 2018.1+
-.NET Std 2.0"
+Supported platforms | Unity 2018.1+
+.NET Std 2.0
