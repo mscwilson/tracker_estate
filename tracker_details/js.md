@@ -95,7 +95,7 @@ Start new session command | yes
 Event index counter for session | yes
 Timestamp on session | yes
 Asynchronous event sending | yes
-Event sending retry | no | retry included in Got request library
+Event sending retry | yes, but | retry included in Got request library
 Plug-in architecture | yes
 Events are different classes | n
 Events are different functions | y
