@@ -18,7 +18,7 @@ Plug-in architecture
 Event_id and timestamp not overridable
 True_timestamp available
 Sent_timestamp available
-Automatically track general atomic fields
+Automatically track general atomic fields | don't know what this is
 Events are different classes
 Events are different functions
 Media tracking

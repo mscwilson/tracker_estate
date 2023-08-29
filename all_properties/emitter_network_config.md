@@ -1,5 +1,5 @@
 EMITTER/NETWORK CONFIGURATION
-Implicit endpoint url (default POST and HTTPS)
+Implicit endpoint url (default POST and HTTPS) | "collector.com" is fine, doesn't have to be "https://collector.com/i" etc
 Custom POST path
 Custom connection timeout
 Custom request headers
