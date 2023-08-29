@@ -69,7 +69,7 @@ Set screen viewport | y
 Set colour depth | y
 Set domain sessionId | y
 Set domain sessionIndex | y
-Set user fingerprint | y
+Set user fingerprint | y | added from external PR
 
 # EVENT LOSS CALLBACKS
 Sending failure callback | n
@@ -80,7 +80,7 @@ Snowplow API | no
 Remote configuration | no
 Multiple tracker instances | n | we recommend implementing as a Singleton
 Track an event on multiple trackers at once | n
-Event_id and timestamp not overridable | no
+Event_id and timestamp not overridable | y
 True_timestamp available | no
 Sent_timestamp available | yes
 Track returns event_id | no
